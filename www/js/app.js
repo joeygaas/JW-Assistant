@@ -21,9 +21,17 @@ var jwApp = angular.module('jwApp', ['ionic'])
   *
   *@description app routes
   */
+  var basePath = '/templates/'; // templates base path
   $stateProvider
-  .state('index', {
-    url : '/',
-    templateUrl : 'home.html'
-  })
+    .state('index', {
+      url : '/',
+      templateUrl : basePath + 'home.html'
+    })
+
+    // Book routes
+    .state('book', {
+      url: '/book',
+      templateUrl : basePath + 'booksTpl/overview.html'
+    });
+
 }]);
