@@ -1,0 +1,288 @@
+/* 	extracted.css  */
+
+/* ----------------------------------------------------------------------------  */
+
+
+@page {
+	border: .5ex; 
+}
+		
+body {			
+	margin: 5%;
+	-webkit-font-smoothing: subpixel-antialiased;
+	
+}
+
+/* HEADERS */
+
+h1 { 					
+	text-align: left;
+	-webkit-hyphens:none;
+}
+
+h2, h3, h4, h5, h6 { 	
+	text-align: left;
+	hyphens:none; 
+	-webkit-hyphens:none;
+}
+
+/* P */
+
+p {
+	font-size: 100%;
+	font-family: Arial, Helvetica, sans-serif !important;
+	orphans: 2;
+	widows: 2;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+p.w_pagenavnum { 
+	font-size: large; 
+}
+
+
+p.qu, p.w_question {
+    	color: #1f9c0a;
+	font-size: .79em;
+	line-height: 1.11em;
+	font-family: "TrebuchetMS", "Trebuchet MS", Arial, Helvetica, 	Padauk, sans-serif !important;
+	margin-top: 0em;
+	margin-right: 0em;
+	margin-bottom: .22em;
+	margin-left: 0em;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+				
+/* DIV */
+
+div.closingContent {
+	padding: 1.20em;
+	line-height: normal;
+	margin-bottom: 2em;	
+	page-break-inside: avoid;
+	background-color: #f3f3f5;
+	-webkit-column-break-inside: avoid;
+}
+
+div.closingContent p {
+	padding-top: 1.5em;
+	text-align: center;
+	font-size: .85em;
+	font-family: "Times New Roman", Times, Padauk, serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* boxes */
+
+div.boxSupplement {
+	margin-top: 1em;
+	margin-right: 0em;
+	padding-top: 1.25em
+	padding-right: 2.25em;
+	overflow:hidden;
+	background-color: #f3f3f5;
+	box-shadow: 10px 10px 5px #888888;
+	/*Shadow*/  
+   	-moz-box-shadow:inset 0 0 7px #888888;  /* browser ereaders - chrome */
+   	-webkit-box-shadow:inset 0 0 7px #c9c9c9;  /*apple */
+   	box-shadow:inset 0 0 7px #888888;   /*other */
+	clear: both;
+}
+
+/* extracted */
+
+div.groupExt {
+	margin-top: 2em;
+	font-size: 1.2em;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;
+}
+
+div.groupExt.groupExtPubRef {
+	font-weight: bold;
+	font-size: 1.2em;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+	margin-top: 2.25em;
+	margin-right: 0em;
+}
+
+div.extPubRef p {
+	font-size: 1.2em;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+div.groupExt.groupExtPubRef.extPubRef p {
+	font-size: 1.2em;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+	margin-top: 1.25em;
+	margin-right: 0em;
+	text-indent: 0em;
+}
+
+div.groupFootnote p {
+	font-size: 1.1em;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;
+	margin-top: 1.25em;
+	margin-right: 0em;
+	text-indent: 0em;
+}
+
+div.groupExtScrpCite { 
+	padding-top: .25em; 
+}
+
+div.groupExtScrpCite  p {
+	font-size: 1.1em;
+	margin-top: 1em;
+}
+
+/* modify publications ref*/
+
+div.extPubRef p:first-child {
+	font: Arial, Helvetica, Padauk, sans-serif !important;
+	margin-bottom: 1em;
+}
+
+div.groupExtScrpCite p {
+	font-size: 100%;
+	margin-top: 1em;
+}
+
+div.groupExt groupExtScrpCite extScrpCite { 
+	font: Arial;
+}
+
+div.groupExt {
+	margin-top: 2em;
+}
+
+div.extPubRef p:first-child {
+	font-size: 120%;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;
+	margin-bottom: 1em;
+}
+							
+div.groupExt groupExtScrpCite extScrpCite p{
+	font-size: 100%;
+	font-family: Arial, Helvetica, Padauk, sans-serif !important;	
+	margin-bottom: 1em;
+}		
+							
+div.extPubRef {	
+	margin-top:2em;
+}
+
+
+
+/* FORMATTING COMMAND ARGUMENTS */
+
+.CI { 
+	text-align: center; 
+	margin-top: 0px; 
+	margin-bottom: 0px; 
+	padding: 0px; 
+}
+
+.center { 
+	text-align: center; 
+}
+
+.smcap { 
+	font-variant: small-caps; 
+}
+
+.u { 
+	text-decoration: underline; 
+}
+
+.bold { 
+	font-weight: bold; 
+}
+
+/* LINK ELEMENTS */
+
+/*apple: ibooks, ipad, iphone */
+a:link    {
+	-webkit-text-fill-color: #3fa2bf;
+	-webkit-tap-highlight-color: silver;
+	margin-bottom: 1em;
+} 
+			
+a:visited {
+	-webkit-text-fill-color: gray;
+	text-decoration: none;
+    	-webkit-tap-highlight-color: silver;
+	margin-bottom: 1em;
+}
+			
+a:hover   {
+	-webkit-text-fill-color: blue;
+	text-decoration: none;
+     	-webkit-tap-highlight-color: silver;
+	margin-bottom: 1em;
+} 
+			
+a:active  {
+	-webkit-text-fill-color: maroon;
+    	-webkit-tap-highlight-color: silver;
+	margin-bottom: 1em;
+} 
+
+/*web browsers readers + other */
+
+a:link    {
+	color: #3fa2bf;
+}
+
+a:visited {
+	color: #c9c9c9; 
+	text-decoration: none;
+}
+
+a:hover   {
+	color: #0000FF;
+	text-decoration: none;
+} 
+
+a:active  {
+	color: #800000;
+} 
+
+/* MOBI */
+
+e:link {
+	color: #3fa2bf;
+} 
+
+e:visited {
+	color: #c9c9c9; 
+	text-decoration: none;
+}
+
+e:active {
+	color: #800000;
+} 
+
+e:hover {
+	color: #0000FF; 
+	text-decoration: none;
+} 
+
+e:focus {
+	color: #3fa2bf; 
+	background-color:#c5b587;
+}
+
+/* ------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+

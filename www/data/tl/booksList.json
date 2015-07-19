@@ -1,0 +1,8 @@
+{"books" : [ 
+			 {"description" : "Bagong Sanlibutan Salin ng Banal na Kasulatan", "abr" : "bi12_TG", "img" : "data/tl/bi12_TG/OEBPS/images/1001060547_TG_cvr.jpg"},
+			 {"description" : "ANU BA Talaga  ANG ITINUTURO NG BIBLIYA?", "abr" : "bh_TG", "img" : "data/tl/bh_TG/OEBPS/images/1102005169_TG_cvr.jpg"},
+			 {"description" : "MAGANDANG BALITA MULA SA DIYOS", "abr" : "fg_TG", "img" : "data/tl/fg_TG/OEBPS/images/1102012181_TG_cvr.jpg"},
+			 {"description" : "Intruduksyon sa Salita ng Diyos", "abr" : "igw_TG", "img" : "data/tl/igw_TG/OEBPS/images/1102013691_TG_cvr.jpg"},
+			 {"description" : "Tulong sa Pag-aaral ng Salita ng Diyos", "abr" : "sgd_TG", "img" : "data/tl/sgd_TG/OEBPS/images/1102013690_TG_cvr.jpg"}
+		   ]
+}

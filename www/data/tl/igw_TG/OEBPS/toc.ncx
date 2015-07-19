@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ncx version="2005-1" xml:lang="TL" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+<head>
+<meta name="dtb:uid" content="urn:uuid:09C3830A-D993-4A69-9571-FF0BCEE89BDA"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle>
+<text>Introduksyon sa Salita ng Diyos  (igw) (igw-TG)</text>
+</docTitle>
+<docAuthor>
+<text>WATCHTOWER</text>
+</docAuthor>
+<navMap>
+<navPoint class="chapter" id="chapter1" playOrder="1">
+<navLabel><text>   Introduksyon sa Salita ng Diyos</text></navLabel>
+<content src="000_CVR.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter2" playOrder="2">
+<navLabel><text>   Pahina ng Pamagat/Pahina ng mga Tagapaglathala</text></navLabel>
+<content src="001_TTP.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter3" playOrder="3">
+<navLabel><text>   Introduksyon sa Salita ng Diyos</text></navLabel>
+<content src="002_INTRO.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter4" playOrder="4">
+<navLabel><text>   Tanong 1: Sino ang Diyos?</text></navLabel>
+<content src="003_QUES.1.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter5" playOrder="5">
+<navLabel><text>   Tanong 2: Paano ka matututo tungkol sa Diyos?</text></navLabel>
+<content src="004_QUES.2.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter6" playOrder="6">
+<navLabel><text>   Tanong 3: Sino talaga ang awtor ng Bibliya?</text></navLabel>
+<content src="005_QUES.3.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter7" playOrder="7">
+<navLabel><text>   Tanong 4: Tama ba ang sinasabi ng Bibliya pagdating sa siyensiya?</text></navLabel>
+<content src="006_QUES.4.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter8" playOrder="8">
+<navLabel><text>   Tanong 5: Ano ang mensahe ng Bibliya?</text></navLabel>
+<content src="007_QUES.5.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter9" playOrder="9">
+<navLabel><text>   Tanong 6: Ano ang inihula ng Bibliya tungkol sa Mesiyas?</text></navLabel>
+<content src="008_QUES.6.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter10" playOrder="10">
+<navLabel><text>   Tanong 7: Ano ang inihula ng Bibliya tungkol sa panahon natin?</text></navLabel>
+<content src="009_QUES.7.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter11" playOrder="11">
+<navLabel><text>   Tanong 8: Dapat bang isisi sa Diyos ang pagdurusa ng tao?</text></navLabel>
+<content src="010_QUES.8.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter12" playOrder="12">
+<navLabel><text>   Tanong 9: Bakit nagdurusa ang mga tao?</text></navLabel>
+<content src="011_QUES.9.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter13" playOrder="13">
+<navLabel><text>   Tanong 10: Ano ang ipinangangako ng Bibliya na mangyayari sa hinaharap?</text></navLabel>
+<content src="012_QUES.10.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter14" playOrder="14">
+<navLabel><text>   Tanong 11: Ano ang nangyayari sa isang tao kapag namatay siya?</text></navLabel>
+<content src="013_QUES.11.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter15" playOrder="15">
+<navLabel><text>   Tanong 12: Ano ang pag-asa para sa mga patay?</text></navLabel>
+<content src="014_QUES.12.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter16" playOrder="16">
+<navLabel><text>   Tanong 13: Ano ang sinasabi ng Bibliya tungkol sa pagtatrabaho?</text></navLabel>
+<content src="015_QUES.13.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter17" playOrder="17">
+<navLabel><text>   Tanong 14: Paano mo maiiwasan ang problema sa pera?</text></navLabel>
+<content src="016_QUES.14.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter18" playOrder="18">
+<navLabel><text>   Tanong 15: Paano ka magiging maligaya?</text></navLabel>
+<content src="017_QUES.15.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter19" playOrder="19">
+<navLabel><text>   Tanong 16: Paano mo makakayanan ang kabalisahan?</text></navLabel>
+<content src="018_QUES.16.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter20" playOrder="20">
+<navLabel><text>   Tanong 17: Paano makatutulong ang Bibliya sa iyong pamilya?</text></navLabel>
+<content src="019_QUES.17.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter21" playOrder="21">
+<navLabel><text>   Tanong 18: Paano ka mapapalapít sa Diyos?</text></navLabel>
+<content src="020_QUES.18.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter22" playOrder="22">
+<navLabel><text>   Tanong 19: Ano ang nilalaman ng mga aklat ng Bibliya?</text></navLabel>
+<content src="021_QUES.19.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter23" playOrder="23">
+<navLabel><text>   Tanong 20: Paano ka makikinabang nang husto sa pagbabasa ng Bibliya?</text></navLabel>
+<content src="022_QUES.20.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter47" playOrder="24">
+<navLabel><text>Nabigasyon ng Pahina</text></navLabel>
+<content src="pagenav.xhtml"/>
+</navPoint>
+</navMap>
+<pageList id="page-mapping" class="pagenavnum">
+<navLabel><text>Nabigasyon ng Pahina</text></navLabel>
+<pageTarget id="page-1" value="1" type="normal" playOrder="25">
+<navLabel><text>1</text></navLabel>
+<content src="000_CVR.xhtml#page1"/>
+</pageTarget>
+<pageTarget id="page-2" value="2" type="normal" playOrder="26">
+<navLabel><text>2</text></navLabel>
+<content src="001_TTP.xhtml#page2"/>
+</pageTarget>
+<pageTarget id="page-3" value="3" type="normal" playOrder="27">
+<navLabel><text>3</text></navLabel>
+<content src="003_QUES.1.xhtml#page3"/>
+</pageTarget>
+<pageTarget id="page-4" value="4" type="normal" playOrder="28">
+<navLabel><text>4</text></navLabel>
+<content src="004_QUES.2.xhtml#page4"/>
+</pageTarget>
+<pageTarget id="page-5" value="5" type="normal" playOrder="29">
+<navLabel><text>5</text></navLabel>
+<content src="004_QUES.2.xhtml#page5"/>
+</pageTarget>
+<pageTarget id="page-6" value="6" type="normal" playOrder="30">
+<navLabel><text>6</text></navLabel>
+<content src="005_QUES.3.xhtml#page6"/>
+</pageTarget>
+<pageTarget id="page-7" value="7" type="normal" playOrder="31">
+<navLabel><text>7</text></navLabel>
+<content src="006_QUES.4.xhtml#page7"/>
+</pageTarget>
+<pageTarget id="page-8" value="8" type="normal" playOrder="32">
+<navLabel><text>8</text></navLabel>
+<content src="007_QUES.5.xhtml#page8"/>
+</pageTarget>
+<pageTarget id="page-9" value="9" type="normal" playOrder="33">
+<navLabel><text>9</text></navLabel>
+<content src="007_QUES.5.xhtml#page9"/>
+</pageTarget>
+<pageTarget id="page-10" value="10" type="normal" playOrder="34">
+<navLabel><text>10</text></navLabel>
+<content src="008_QUES.6.xhtml#page10"/>
+</pageTarget>
+<pageTarget id="page-11" value="11" type="normal" playOrder="35">
+<navLabel><text>11</text></navLabel>
+<content src="008_QUES.6.xhtml#page11"/>
+</pageTarget>
+<pageTarget id="page-12" value="12" type="normal" playOrder="36">
+<navLabel><text>12</text></navLabel>
+<content src="009_QUES.7.xhtml#page12"/>
+</pageTarget>
+<pageTarget id="page-13" value="13" type="normal" playOrder="37">
+<navLabel><text>13</text></navLabel>
+<content src="009_QUES.7.xhtml#page13"/>
+</pageTarget>
+<pageTarget id="page-14" value="14" type="normal" playOrder="38">
+<navLabel><text>14</text></navLabel>
+<content src="010_QUES.8.xhtml#page14"/>
+</pageTarget>
+<pageTarget id="page-15" value="15" type="normal" playOrder="39">
+<navLabel><text>15</text></navLabel>
+<content src="011_QUES.9.xhtml#page15"/>
+</pageTarget>
+<pageTarget id="page-16" value="16" type="normal" playOrder="40">
+<navLabel><text>16</text></navLabel>
+<content src="012_QUES.10.xhtml#page16"/>
+</pageTarget>
+<pageTarget id="page-17" value="17" type="normal" playOrder="41">
+<navLabel><text>17</text></navLabel>
+<content src="012_QUES.10.xhtml#page17"/>
+</pageTarget>
+<pageTarget id="page-18" value="18" type="normal" playOrder="42">
+<navLabel><text>18</text></navLabel>
+<content src="013_QUES.11.xhtml#page18"/>
+</pageTarget>
+<pageTarget id="page-19" value="19" type="normal" playOrder="43">
+<navLabel><text>19</text></navLabel>
+<content src="014_QUES.12.xhtml#page19"/>
+</pageTarget>
+<pageTarget id="page-20" value="20" type="normal" playOrder="44">
+<navLabel><text>20</text></navLabel>
+<content src="015_QUES.13.xhtml#page20"/>
+</pageTarget>
+<pageTarget id="page-21" value="21" type="normal" playOrder="45">
+<navLabel><text>21</text></navLabel>
+<content src="016_QUES.14.xhtml#page21"/>
+</pageTarget>
+<pageTarget id="page-22" value="22" type="normal" playOrder="46">
+<navLabel><text>22</text></navLabel>
+<content src="017_QUES.15.xhtml#page22"/>
+</pageTarget>
+<pageTarget id="page-23" value="23" type="normal" playOrder="47">
+<navLabel><text>23</text></navLabel>
+<content src="017_QUES.15.xhtml#page23"/>
+</pageTarget>
+<pageTarget id="page-24" value="24" type="normal" playOrder="48">
+<navLabel><text>24</text></navLabel>
+<content src="018_QUES.16.xhtml#page24"/>
+</pageTarget>
+<pageTarget id="page-25" value="25" type="normal" playOrder="49">
+<navLabel><text>25</text></navLabel>
+<content src="018_QUES.16.xhtml#page25"/>
+</pageTarget>
+<pageTarget id="page-26" value="26" type="normal" playOrder="50">
+<navLabel><text>26</text></navLabel>
+<content src="019_QUES.17.xhtml#page26"/>
+</pageTarget>
+<pageTarget id="page-27" value="27" type="normal" playOrder="51">
+<navLabel><text>27</text></navLabel>
+<content src="019_QUES.17.xhtml#page27"/>
+</pageTarget>
+<pageTarget id="page-28" value="28" type="normal" playOrder="52">
+<navLabel><text>28</text></navLabel>
+<content src="020_QUES.18.xhtml#page28"/>
+</pageTarget>
+<pageTarget id="page-29" value="29" type="normal" playOrder="53">
+<navLabel><text>29</text></navLabel>
+<content src="020_QUES.18.xhtml#page29"/>
+</pageTarget>
+<pageTarget id="page-30" value="30" type="normal" playOrder="54">
+<navLabel><text>30</text></navLabel>
+<content src="021_QUES.19.xhtml#page30"/>
+</pageTarget>
+<pageTarget id="page-31" value="31" type="normal" playOrder="55">
+<navLabel><text>31</text></navLabel>
+<content src="021_QUES.19.xhtml#page31"/>
+</pageTarget>
+<pageTarget id="page-32" value="32" type="normal" playOrder="56">
+<navLabel><text>32</text></navLabel>
+<content src="022_QUES.20.xhtml#page32"/>
+</pageTarget>
+</pageList>
+</ncx>

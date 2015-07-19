@@ -1,0 +1,446 @@
+/* CSS Document */ /* nwt_11.CSS : 12-13 */ /* repository keywords: groupTOC, */
+
+@page { border: .5ex; }
+
+body { margin: 5%;
+
+text-align: left;}
+
+/* HEADERS __________________________________________________________*/
+
+h1{ 
+
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+text-align:left;
+color:#75000b;
+font-size:24px;
+font-weight:200;
+margin:0em 0em 1em 0em;
+padding:0em;
+-webkit-font-smoothing: subpixel-antialiased;
+
+}
+
+h2{ 
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+font-size:1.25em;
+line-height:1.5em;
+text-indent: 0em;
+font-weight:200;
+color:#75000b;
+margin: 16px 0 0 0;
+-webkit-font-smoothing: subpixel-antialiased;
+
+padding:16px 0em 0em 0em;}
+
+h2.ss.ruleAbove{
+
+border-top: 2px solid #75000b; /*rule variant*/
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+font-size: 1.25em;
+line-height: 1.25em;
+text-indent: 0em;
+color:#75000b;
+font-weight:200;
+margin: 0em;
+-webkit-font-smoothing: subpixel-antialiased;
+padding: .2em 0 8px 0;}
+
+h2.sw.ruleAbove {
+
+border-top: 1px solid #75000b;
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+font-size: 1.25em;
+line-height: 1.2em;
+text-align: left;
+font-weight:200;
+margin:0em;
+padding-top:.2em;}
+
+h2 + h2 {margin-top:-1em;}
+
+h3, div.pGroup h3{
+
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+font-size: 1.2em;
+margin: 0em 0 1.25em 0;
+font-weight:200;
+color:#75000b;
+text-indent:0em;
+-webkit-font-smoothing: subpixel-antialiased;}
+
+strong {
+
+font-weight:200;
+margin: 0em;
+padding:0em;
+-webkit-font-smoothing: subpixel-antialiased;}
+
+h1 strong, h2 strong, h1.strong, h2.strong, h3 strong {font-weight:200;}
+
+
+h3 + p {line-height:1em; }/*compensate lack of h4 for spacing on Acts, Revelation*/
+p.sw strong + p.sw {margin-top:-1.5em; padding:0em;} /*former h4, sw*/ 
+q.scrp + a {margin-top:-1.5em; padding:0em;}
+
+/*QUOTES -- added 9-16*/
+
+#section1 q.scrp, #section2 q.scrp, #section3 q.scrp, #section4 q.scrp, #section5 q.scrp, #section6 q.scrp, #section7 q.scrp, #section8 q.scrp, #section9 q.scrp, #section10 q.scrp, p.sw q.scrp, q.scrp {
+
+font-family: "Palatino Linotype", "Georgia", "Times New Roman", serif;
+
+font-size:115%;
+
+-webkit-font-smoothing: subpixel-antialiased;
+
+margin: -0.2em 0em -.5em 0em;
+
+font-weight: 200;
+
+padding:0em;
+
+}
+
+q { quotes: none; } q:before, q:after { content: ""; content: none;}
+
+/* Bullet list */ 
+
+li { list-style-type:none;
+margin:0em;
+/*text-indent:-6.25em; /*mobi changed from 6*/
+text-indent:-5.9em; /*epub value*/
+padding-left:4em;}
+
+
+div.groupTOC ol.source li>p.sm a { list-style-position: outside;
+
+font: 1.1em 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif !important;
+line-height:1.2em;
+font-weight:200;
+text-align:left;
+padding-left:3.2em; /*wrap without text-indent use*/
+margin-right:0em;
+margin-left:0em; /*for mobi remove for epub*/
+-webkit-font-smoothing: subpixel-antialiased; }
+
+div.groupTOC ol.source li {margin: 1em 0em 1em 1.5em;} 
+
+
+div.groupTOC ol.source li:last-child {margin-bottom:1em;}
+
+.txtSrcBullet + a {text-indent:0em;}
+
+.txtSrcBullet strong, .txtSrcBullet.strong {font: 1.1em 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif !important;}
+
+.txtSrcBullet, div.groupTOC ul.source li>p.sm + .txtSrcBullet  { /*maroon TOC bullets*/
+
+border: 1px solid #3d3d3d;
+color:#e5e5e5;
+display:inline-block;
+font: 1.1em 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif !important;
+font-weight:500;
+height:1.5em;
+margin-left:-24px; /* flush left margin*/
+padding:7px 2px 1px 2px;
+text-align:center;
+vertical-align: middle;
+text-indent:0em;
+background:#75000b;
+-webkit-font-smoothing: subpixel-antialiased;
+-webkit-hyphens:none;
+width:3em;
+clear:both;}
+
+/*TOC Links*/
+
+/*bullet #*/ div.groupTOC ul.source li>p.sm { text-align:left;
+
+margin-left:-.2em; /*flush left box*/
+
+font-family: 'Helvetica Neue', 'HelveticaNeue', "Arial", Helvetica, sans-serif;
+
+-webkit-font-smoothing: subpixel-antialiased; }
+
+div.groupTOC ul.source li>p.sm strong {font: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;}
+
+/*question*/ div.groupTOC ul.source li>p.sm a { list-style-position: outside;
+
+font: 1.1em/1.2em 'Helvetica Neue', 'HelveticaNeue', "Arial", Helvetica, sans-serif;
+text-align:left;
+padding-left:2.9em; /*wrap without text-indent use*/
+margin-right:6em;
+-webkit-font-smoothing: subpixel-antialiased; }
+
+div.groupTOC ul.source li {
+	margin: 1em 0em 1em 1.5em;
+	font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;} 
+
+div.groupTOC ul.source li:last-child {margin-bottom:1em;}
+
+.txtSrcBullet + a {text-indent:0em;}
+
+/*text*/
+
+.contextTtl{
+
+color:#75000b;
+
+display:block;
+
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif !important;
+
+text-align:left;
+
+font:1em;
+
+padding: 0em;
+
+margin: 0em;
+
+font-weight: 300;
+
+-webkit-font-smoothing: subpixel-antialiased;}
+
+div.bodyTxt p.sb, div.bodyTxt.pGroup p { /*foreward*/
+
+font-size:95%;
+
+line-height: 1.25em;
+
+text-align: left;
+
+font-weight:normal;}
+
+div.groupTOC {
+
+line-height: normal;
+
+margin:0em;
+
+text-indent:0em;}
+
+p.sw {
+
+font:.90em/1em;
+
+text-align: left;
+
+-webkit-font-smoothing: subpixel-antialiased;
+
+font-weight:normal;}
+
+div.bodyTxt p.sw{
+
+font:.90em/1.25em;
+
+text-align: left;
+
+-webkit-font-smoothing: subpixel-antialiased;
+
+font-weight:200;}
+
+.pGroup p.sw strong, p.sw strong { /*question 19*/
+
+font:.92em/1em;
+
+text-align: left;
+
+margin-bottom:-1em;
+
+-webkit-font-smoothing: subpixel-antialiased;
+
+font-weight:800;}
+
+/* RULE Contigencies*/
+
+.ruleAbove{
+
+border-top:1px solid silver;
+
+padding-top:1em;
+
+}
+
+/*removed rule*/ div.east_right + div.bodyTxt p.sw.ruleAbove:first-child, p.sw.ruleAbove:first-child, h3.sw.ruleAbove:first-child /*question 19*/ { border-top: none;
+
+margin-top: 2em;
+
+padding-top: 0;}
+
+.ruleAbove + .ruleAbove { /*question 20*/
+
+border-top:0em solid silver;
+
+font-family: Arial, Helvetica, sans-serif !important;}
+
+/*rule*/
+
+div.east_right + div.bodyTxt p.sw.ruleAbove /* if theres an img, set to 50%*/ { border-top:1px solid silver;
+
+padding-top:1em;}
+
+div.east_right + .ruleAbove, .sw.ruleAbove {
+
+border-top: 1px solid silver;
+
+padding-top:1em;
+
+}
+
+/* Closing Content - foreward*/ div.closingContent .sj:first-child{
+
+font-size: 0.95em;
+
+line-height:1.2em;
+
+margin: 1em 0 0 0;
+
+padding: 0;
+
+text-indent:0em;
+
+text-align: right;
+
+-webkit-font-smoothing: subpixel-antialiased;}
+
+div.closingContent .sj{
+
+font-size: 0.95em;
+
+line-height:1.2em;
+
+margin: 0em;
+
+padding: 0;
+
+text-indent:0em;
+
+text-align: right;
+
+-webkit-font-smoothing: subpixel-antialiased;}
+
+div.pGroup p.sn { /*Intro closing*/
+
+font: 90%;
+
+line-height: 1.2em;}
+
+/*MM________________________________________________________________*/
+
+div.east_right{ width: 50%; float: right; margin: .1em 0 .5em .5em !important; padding-left:.1em; line-height: 1.20em !important; display: inline-block; clear:both; z-index:0; }
+
+img, figure { width: 100% !important;
+
+vertical-align: text-top;
+
+margin: 0em;
+
+clear:both;
+
+z-index:0;}
+
+/* cite*/ div.groupFootnote:before {
+
+
+font-size: 1em;
+
+color: grey;
+
+content: "_______________";}
+
+div.groupFootnote p{
+
+font-size: 0.75em;
+
+margin: 1.25em 0em;
+
+-webkit-font-smoothing: subpixel-antialiased;}
+
+div.groupExtScrpCite p {
+
+font-size: 0.75em;
+
+margin-top: 1em;
+
+-webkit-font-smoothing: subpixel-antialiased;}
+
+div.groupExtScrpCite {
+
+padding-top: .25em;}
+
+div.groupExt {
+
+margin-top: 1.75em;}
+
+/*LINK ELEMENTS*/
+
+a:link, a:active, a:visited
+
+{ -webkit-text-fill-color: #6195c7;
+
+color:#6195c7;
+
+text-align:left;
+
+font-weight: 200;}
+
+a:hover { -webkit-text-fill-color: gray;
+
+font-weight: 200;
+
+text-decoration: none;
+
+text-align:left;
+
+color:#c9c9c9;}
+
+/* MOBI */
+
+e:link {
+
+color: #6195c7; }
+
+e:visited {
+
+color: #6195c7;
+
+text-decoration: none; }
+
+e:active {
+
+color: #6195c7; }
+
+e:hover {
+
+color: #666;
+
+text-decoration: none; }
+
+e:focus {
+
+color: #3fa2bf;
+
+background-color: #c5b587; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

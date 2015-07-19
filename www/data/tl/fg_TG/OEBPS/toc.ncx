@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ncx version="2005-1" xml:lang="tl" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+<head>
+<meta name="dtb:uid" content="urn:uuid:102C58C2-5403-4EBF-90C5-61BCB4FD863D"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="0"/>
+<meta name="dtb:maxPageNumber" content="0"/>
+</head>
+<docTitle>
+<text>Magandang Balita (fg-TG)</text>
+</docTitle>
+<docAuthor>
+<text>WATCHTOWER</text>
+</docAuthor>
+<navMap>
+<navPoint class="chapter" id="chapter1" playOrder="1">
+<navLabel><text>   Magandang Balita Mula sa Diyos!</text></navLabel>
+<content src="00_FG_CV.R.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter2" playOrder="2">
+<navLabel><text>   Title Page/Publishers’ Page</text></navLabel>
+<content src="01_FG_TT.LPG.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter3" playOrder="3">
+<navLabel><text>   Talaan ng mga Nilalaman</text></navLabel>
+<content src="02_FG_TO.C.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter4" playOrder="4">
+<navLabel><text>   Kung Paano Makakatulong sa Iyo ang Brosyur na Ito</text></navLabel>
+<content src="03_FG_FR.WD.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter5" playOrder="5">
+<navLabel><text> 1 Ano ang Magandang Balita?</text></navLabel>
+<content src="04_FG_LE.S_1.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter6" playOrder="6">
+<navLabel><text> 2 Sino ang Diyos?</text></navLabel>
+<content src="05_FG_LE.S_2.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter7" playOrder="7">
+<navLabel><text> 3 Galing ba Talaga sa Diyos ang Magandang Balita?</text></navLabel>
+<content src="06_FG_LE.S_3.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter8" playOrder="8">
+<navLabel><text> 4 Sino si Jesu-Kristo?</text></navLabel>
+<content src="07_FG_LE.S_4.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter9" playOrder="9">
+<navLabel><text> 5 Ano ang Layunin ng Diyos Para sa Lupa?</text></navLabel>
+<content src="08_FG_LE.S_5.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter10" playOrder="10">
+<navLabel><text> 6 Ano ang Pag-asa ng mga Patay?</text></navLabel>
+<content src="09_FG_LE.S_6.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter11" playOrder="11">
+<navLabel><text> 7 Ano ang Kaharian ng Diyos?</text></navLabel>
+<content src="10_FG_LE.S_7.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter12" playOrder="12">
+<navLabel><text> 8 Bakit Hinahayaan ng Diyos ang Kasamaan at Pagdurusa?</text></navLabel>
+<content src="11_FG_LE.S_8.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter13" playOrder="13">
+<navLabel><text> 9 Paano Magiging Maligaya ang Inyong Pamilya?</text></navLabel>
+<content src="12_FG_LE.S_9.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter14" playOrder="14">
+<navLabel><text>10 Paano Mo Makikilala ang Tunay na Relihiyon?</text></navLabel>
+<content src="13_FG_LE.S10.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter15" playOrder="15">
+<navLabel><text>11 Paano Nakakatulong sa Atin ang mga Kautusan ng Diyos?</text></navLabel>
+<content src="14_FG_LE.S11.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter16" playOrder="16">
+<navLabel><text>12 Paano Ka Magiging Malapít sa Diyos?</text></navLabel>
+<content src="15_FG_LE.S12.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter17" playOrder="17">
+<navLabel><text>13 Ano ang Mangyayari sa mga Relihiyon?</text></navLabel>
+<content src="16_FG_LE.S13.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter18" playOrder="18">
+<navLabel><text>14 Bakit Nag-organisa ang Diyos ng Isang Bayan?</text></navLabel>
+<content src="17_FG_LE.S14.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter19" playOrder="19">
+<navLabel><text>15 Bakit Dapat Kang Magpatuloy?</text></navLabel>
+<content src="18_FG_LE.S15.xhtml"/>
+</navPoint>
+<navPoint class="chapter" id="chapter39" playOrder="20">
+<navLabel><text>Page Navigation</text></navLabel>
+<content src="pagenav.xhtml"/>
+</navPoint>
+</navMap>
+<pageList id="page-mapping" class="pagenavnum">
+<navLabel><text>Page Navigation</text></navLabel>
+<pageTarget id="page-1" value="1" type="normal" playOrder="21">
+<navLabel><text>1</text></navLabel>
+<content src="00_FG_CV.R.xhtml#page1"/>
+</pageTarget>
+<pageTarget id="page-2" value="2" type="normal" playOrder="22">
+<navLabel><text>2</text></navLabel>
+<content src="01_FG_TT.LPG.xhtml#page2"/>
+</pageTarget>
+<pageTarget id="page-3" value="3" type="normal" playOrder="23">
+<navLabel><text>3</text></navLabel>
+<content src="04_FG_LE.S_1.xhtml#page3"/>
+</pageTarget>
+<pageTarget id="page-4" value="4" type="normal" playOrder="24">
+<navLabel><text>4</text></navLabel>
+<content src="05_FG_LE.S_2.xhtml#page4"/>
+</pageTarget>
+<pageTarget id="page-5" value="5" type="normal" playOrder="25">
+<navLabel><text>5</text></navLabel>
+<content src="05_FG_LE.S_2.xhtml#page5"/>
+</pageTarget>
+<pageTarget id="page-6" value="6" type="normal" playOrder="26">
+<navLabel><text>6</text></navLabel>
+<content src="06_FG_LE.S_3.xhtml#page6"/>
+</pageTarget>
+<pageTarget id="page-7" value="7" type="normal" playOrder="27">
+<navLabel><text>7</text></navLabel>
+<content src="06_FG_LE.S_3.xhtml#page7"/>
+</pageTarget>
+<pageTarget id="page-8" value="8" type="normal" playOrder="28">
+<navLabel><text>8</text></navLabel>
+<content src="07_FG_LE.S_4.xhtml#page8"/>
+</pageTarget>
+<pageTarget id="page-9" value="9" type="normal" playOrder="29">
+<navLabel><text>9</text></navLabel>
+<content src="07_FG_LE.S_4.xhtml#page9"/>
+</pageTarget>
+<pageTarget id="page-10" value="10" type="normal" playOrder="30">
+<navLabel><text>10</text></navLabel>
+<content src="08_FG_LE.S_5.xhtml#page10"/>
+</pageTarget>
+<pageTarget id="page-11" value="11" type="normal" playOrder="31">
+<navLabel><text>11</text></navLabel>
+<content src="08_FG_LE.S_5.xhtml#page11"/>
+</pageTarget>
+<pageTarget id="page-12" value="12" type="normal" playOrder="32">
+<navLabel><text>12</text></navLabel>
+<content src="09_FG_LE.S_6.xhtml#page12"/>
+</pageTarget>
+<pageTarget id="page-13" value="13" type="normal" playOrder="33">
+<navLabel><text>13</text></navLabel>
+<content src="09_FG_LE.S_6.xhtml#page13"/>
+</pageTarget>
+<pageTarget id="page-14" value="14" type="normal" playOrder="34">
+<navLabel><text>14</text></navLabel>
+<content src="10_FG_LE.S_7.xhtml#page14"/>
+</pageTarget>
+<pageTarget id="page-15" value="15" type="normal" playOrder="35">
+<navLabel><text>15</text></navLabel>
+<content src="10_FG_LE.S_7.xhtml#page15"/>
+</pageTarget>
+<pageTarget id="page-16" value="16" type="normal" playOrder="36">
+<navLabel><text>16</text></navLabel>
+<content src="11_FG_LE.S_8.xhtml#page16"/>
+</pageTarget>
+<pageTarget id="page-17" value="17" type="normal" playOrder="37">
+<navLabel><text>17</text></navLabel>
+<content src="11_FG_LE.S_8.xhtml#page17"/>
+</pageTarget>
+<pageTarget id="page-18" value="18" type="normal" playOrder="38">
+<navLabel><text>18</text></navLabel>
+<content src="12_FG_LE.S_9.xhtml#page18"/>
+</pageTarget>
+<pageTarget id="page-19" value="19" type="normal" playOrder="39">
+<navLabel><text>19</text></navLabel>
+<content src="12_FG_LE.S_9.xhtml#page19"/>
+</pageTarget>
+<pageTarget id="page-20" value="20" type="normal" playOrder="40">
+<navLabel><text>20</text></navLabel>
+<content src="13_FG_LE.S10.xhtml#page20"/>
+</pageTarget>
+<pageTarget id="page-21" value="21" type="normal" playOrder="41">
+<navLabel><text>21</text></navLabel>
+<content src="13_FG_LE.S10.xhtml#page21"/>
+</pageTarget>
+<pageTarget id="page-22" value="22" type="normal" playOrder="42">
+<navLabel><text>22</text></navLabel>
+<content src="14_FG_LE.S11.xhtml#page22"/>
+</pageTarget>
+<pageTarget id="page-23" value="23" type="normal" playOrder="43">
+<navLabel><text>23</text></navLabel>
+<content src="14_FG_LE.S11.xhtml#page23"/>
+</pageTarget>
+<pageTarget id="page-24" value="24" type="normal" playOrder="44">
+<navLabel><text>24</text></navLabel>
+<content src="15_FG_LE.S12.xhtml#page24"/>
+</pageTarget>
+<pageTarget id="page-25" value="25" type="normal" playOrder="45">
+<navLabel><text>25</text></navLabel>
+<content src="15_FG_LE.S12.xhtml#page25"/>
+</pageTarget>
+<pageTarget id="page-26" value="26" type="normal" playOrder="46">
+<navLabel><text>26</text></navLabel>
+<content src="16_FG_LE.S13.xhtml#page26"/>
+</pageTarget>
+<pageTarget id="page-27" value="27" type="normal" playOrder="47">
+<navLabel><text>27</text></navLabel>
+<content src="16_FG_LE.S13.xhtml#page27"/>
+</pageTarget>
+<pageTarget id="page-28" value="28" type="normal" playOrder="48">
+<navLabel><text>28</text></navLabel>
+<content src="17_FG_LE.S14.xhtml#page28"/>
+</pageTarget>
+<pageTarget id="page-29" value="29" type="normal" playOrder="49">
+<navLabel><text>29</text></navLabel>
+<content src="17_FG_LE.S14.xhtml#page29"/>
+</pageTarget>
+<pageTarget id="page-30" value="30" type="normal" playOrder="50">
+<navLabel><text>30</text></navLabel>
+<content src="18_FG_LE.S15.xhtml#page30"/>
+</pageTarget>
+<pageTarget id="page-31" value="31" type="normal" playOrder="51">
+<navLabel><text>31</text></navLabel>
+<content src="18_FG_LE.S15.xhtml#page31"/>
+</pageTarget>
+<pageTarget id="page-32" value="32" type="normal" playOrder="52">
+<navLabel><text>32</text></navLabel>
+<content src="02_FG_TO.C.xhtml#page32"/>
+</pageTarget>
+</pageList>
+</ncx>

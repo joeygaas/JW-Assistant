@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+<dc:title>Magandang Balita (fg-TG)</dc:title>
+<dc:creator id="creator" xml:lang="tl" dir="ltr">WATCHTOWER</dc:creator>
+<meta refines="#creator" property="role" scheme="marc:relators" id="role">aut</meta><dc:language>tl</dc:language>
+<dc:publisher>Watchtower Bible and Tract Society of New York, Inc.</dc:publisher>
+<dc:identifier id="BookId">urn:uuid:102C58C2-5403-4EBF-90C5-61BCB4FD863D</dc:identifier>
+<meta property="dcterms:modified">2013-11-31T00:46:46Z</meta>
+
+<meta name="cover" content="cover-image"/>
+</metadata>
+<manifest>
+<item id="toc" properties="nav" href="toc.xhtml" media-type="application/xhtml+xml" />
+<item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+<item id="style1" href="css/default.css" media-type="text/css" />
+<item id="style2" href="css/fg_39.css" media-type="text/css" />
+<item id="style3" href="css/fg_18.css" media-type="text/css" />
+<item id="style4" href="css/fg_19.css" media-type="text/css" />
+<item id="style5" href="css/fg_11.css" media-type="text/css" />
+<item id="style6" href="css/fg_13.css" media-type="text/css" />
+<item id="style7" href="css/extracted.css" media-type="text/css" />
+<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml" />
+<item id="cover-image" properties="cover-image" href="images/1102012181_TG_cvr.jpg" media-type="image/jpeg" />
+<item id="chapter1" href="00_FG_CV.R.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter2" href="01_FG_TT.LPG.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter3" href="02_FG_TO.C.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter4" href="03_FG_FR.WD.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter5" href="04_FG_LE.S_1.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter6" href="05_FG_LE.S_2.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter7" href="06_FG_LE.S_3.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter8" href="07_FG_LE.S_4.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter9" href="08_FG_LE.S_5.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter10" href="09_FG_LE.S_6.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter11" href="10_FG_LE.S_7.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter12" href="11_FG_LE.S_8.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter13" href="12_FG_LE.S_9.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter14" href="13_FG_LE.S10.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter15" href="14_FG_LE.S11.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter16" href="15_FG_LE.S12.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter17" href="16_FG_LE.S13.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter18" href="17_FG_LE.S14.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter19" href="18_FG_LE.S15.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter20" href="00_FG_CV.R-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter21" href="01_FG_TT.LPG-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter22" href="02_FG_TO.C-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter23" href="03_FG_FR.WD-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter24" href="04_FG_LE.S_1-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter25" href="05_FG_LE.S_2-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter26" href="06_FG_LE.S_3-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter27" href="07_FG_LE.S_4-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter28" href="08_FG_LE.S_5-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter29" href="09_FG_LE.S_6-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter30" href="10_FG_LE.S_7-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter31" href="11_FG_LE.S_8-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter32" href="12_FG_LE.S_9-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter33" href="13_FG_LE.S10-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter34" href="14_FG_LE.S11-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter35" href="15_FG_LE.S12-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter36" href="16_FG_LE.S13-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter37" href="17_FG_LE.S14-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter38" href="18_FG_LE.S15-extracted.xhtml" media-type="application/xhtml+xml" />
+<item id="chapter39" href="pagenav.xhtml" media-type="application/xhtml+xml" />
+<item id="image2" href="images/1102012182_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image3" href="images/1102012182_TG_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image4" href="images/1102012183_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image5" href="images/1102012184_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image6" href="images/1102012184_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image7" href="images/1102012184_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image8" href="images/1102012185_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image9" href="images/1102012185_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image10" href="images/1102012186_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image11" href="images/1102012186_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image12" href="images/1102012187_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image13" href="images/1102012187_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image14" href="images/1102012187_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image15" href="images/1102012188_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image16" href="images/1102012188_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image17" href="images/1102012188_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image18" href="images/1102012189_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image19" href="images/1102012189_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image20" href="images/1102012189_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image21" href="images/1102012190_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image22" href="images/1102012190_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image23" href="images/1102012191_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image24" href="images/1102012191_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image25" href="images/1102012191_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image26" href="images/1102012191_univ_cnt_4.jpg" media-type="image/jpeg" />
+<item id="image27" href="images/1102012192_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image28" href="images/1102012192_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image29" href="images/1102012192_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image30" href="images/1102012198_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image31" href="images/1102012198_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image32" href="images/1102012193_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image33" href="images/1102012193_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image34" href="images/1102012193_univ_cnt_3.jpg" media-type="image/jpeg" />
+<item id="image35" href="images/1102012193_univ_cnt_4.jpg" media-type="image/jpeg" />
+<item id="image36" href="images/1102012194_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image37" href="images/1102012194_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image38" href="images/1102012195_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image39" href="images/1102012195_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image40" href="images/1102012196_univ_cnt_1.jpg" media-type="image/jpeg" />
+<item id="image41" href="images/1102012196_univ_cnt_2.jpg" media-type="image/jpeg" />
+<item id="image42" href="images/1102012196_univ_cnt_3.jpg" media-type="image/jpeg" />
+</manifest>
+<spine toc="ncx">
+<itemref idref="cover" linear="no" />
+<itemref idref="toc" linear="no" />
+<itemref idref="chapter1" />
+<itemref idref="chapter2" />
+<itemref idref="chapter3" />
+<itemref idref="chapter4" />
+<itemref idref="chapter5" />
+<itemref idref="chapter6" />
+<itemref idref="chapter7" />
+<itemref idref="chapter8" />
+<itemref idref="chapter9" />
+<itemref idref="chapter10" />
+<itemref idref="chapter11" />
+<itemref idref="chapter12" />
+<itemref idref="chapter13" />
+<itemref idref="chapter14" />
+<itemref idref="chapter15" />
+<itemref idref="chapter16" />
+<itemref idref="chapter17" />
+<itemref idref="chapter18" />
+<itemref idref="chapter19" />
+<itemref idref="chapter20" linear="no" />
+<itemref idref="chapter21" linear="no" />
+<itemref idref="chapter22" linear="no" />
+<itemref idref="chapter23" linear="no" />
+<itemref idref="chapter24" linear="no" />
+<itemref idref="chapter25" linear="no" />
+<itemref idref="chapter26" linear="no" />
+<itemref idref="chapter27" linear="no" />
+<itemref idref="chapter28" linear="no" />
+<itemref idref="chapter29" linear="no" />
+<itemref idref="chapter30" linear="no" />
+<itemref idref="chapter31" linear="no" />
+<itemref idref="chapter32" linear="no" />
+<itemref idref="chapter33" linear="no" />
+<itemref idref="chapter34" linear="no" />
+<itemref idref="chapter35" linear="no" />
+<itemref idref="chapter36" linear="no" />
+<itemref idref="chapter37" linear="no" />
+<itemref idref="chapter38" linear="no" />
+<itemref idref="chapter39" />
+</spine>
+<guide><reference type="cover" href="cover.xhtml" title="Cover"/></guide>
+</package>

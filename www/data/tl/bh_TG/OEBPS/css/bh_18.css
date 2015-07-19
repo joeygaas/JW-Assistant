@@ -1,0 +1,111 @@
+/* bh_18.CSS - Title Page/Publishers' Page */
+
+/* ------------------------------------------------------------------ */
+
+body {
+	margin-top: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	margin-left: 5%;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+div {
+	margin: 1px;
+}
+
+div.pGroup {
+	text-align: center;
+	text-indent: 0em;
+	margin-bottom: 3em;
+	font-family: Arial, Helvetica, sans-serif !important;
+}
+
+p.contextTtl {
+	color:#3d3d3d;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: .95em;
+	Font-family: Arial, Helvetica, sans-serif !important;
+	padding-bottom: 0.3em;
+	margin-top: 0em;
+	margin-right: 0em;
+	margin-bottom: 2em;
+	margin-left: 0em;
+	border-bottom: 1px solid black;
+}
+
+/* HEADER */
+
+h1 {
+	text-align: center !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 2.25em; 
+	font-weight: bold;
+	margin-top: 2.5em;
+	margin-right: 0;
+	margin-bottom: 2em;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: .50em;
+	padding-left: 0;
+	-webkit-hyphens: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* DIV */
+
+div.bodyTxt p {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 70% !important;
+}
+
+div.bodyTxt li {
+	text-align: center;
+	margin-left: 0em;
+}
+
+div.openingContent p {
+	text-align: center;
+	text-indent: 0em;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 1em !important;
+	margin-bottom: 1em;
+}
+
+div.copyrightInfo p {
+	text-align: center;
+	text-indent: 0em;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: .80em !important;
+ 	margin-top: 0em;
+	margin-right: 0em;
+	margin-bottom: .5em;
+	margin-left: 0em;
+}  
+
+div.groupPubInfo p { 
+	text-align: center;
+	text-indent: 0em;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: .80em !important;
+	margin-top: 0em;
+	margin-right: 0em;
+	margin-bottom: .5em;
+	margin-left: 0em;
+}
+
+div.closingContent p {
+	text-align: center;
+	text-indent: 0em;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: .80em !important;
+	margin-top: 1em;
+	margin-right: 0em;
+	margin-bottom: .5em;
+	margin-left: 0em;
+}
+
+/* ------------------------------------------------------------------ */

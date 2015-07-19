@@ -1,0 +1,221 @@
+
+/*  fg_13.css	TABLE OF CONTENTS  */
+/* validated 2-12-13*/
+/* updated validated EPUB3/MOBI 5-22-13*/
+/* updated 4-6-13 revised mm div */
+/*  1.		@ function commands
+	2.		Headers
+	3. 		p dec
+	4.		DIV tag structures
+			body/heading formatting
+			footnote formatting 
+			formatting command arguments
+			MM Content image positional divs
+	5.		Images
+	6.		Captions
+	7. 		Link Elements
+------------------------------------------------------------*/
+
+@page 			{    border: .5ex; }
+		
+body 		{		margin: 5%; 
+					text-align: left;
+					-webkit-font-smoothing: subpixel-antialiased;}
+
+/* HEADERS __________________________________________________________*/
+h1 { 	font: bold 1.25em/1.1em Arial, Helvetica, Padauk, sans-serif !important;
+			margin: 0em 0em 1em 0em;
+			-webkit-hyphens:none;
+			-webkit-font-smoothing: subpixel-antialiased;  }
+
+h2 {	font: bold 0.85em/1em "TrebuchetMS", "Trebuchet MS", Arial, Helvetica, Padauk, sans-serif;
+			margin: 1.8em 0 0.5em 0;
+			page-break-after: avoid;
+			-webkit-font-smoothing: subpixel-antialiased;}
+
+/*___________________________________________________________________*/	
+
+p {
+	orphans: 2;
+	widows: 2;
+	text-indent:0.5em;
+	-webkit-font-smoothing: subpixel-antialiased;
+	}
+
+/*p text indent exceptions*/
+h1, h2,
+div.relatedContent p,
+p.contextTtl,
+li p,
+div.east_right p, div.east_left p,
+div.groupExt.groupExtScrpCite p
+{          text-indent:0em; 					
+}
+
+sup { font-size: xx-small; }
+
+
+ 
+      
+/*DIV TAG STRUCTURES___________________________________________________________________*/
+
+				/*context title*/
+p.contextTtl {
+	border-bottom: thin solid #3d3d3d;
+	color:#3d3d3d;
+	font: .95em/normal "Arial", sans-serif !important;
+	margin: 0em 0em 2.5em 0em;
+	padding-bottom: 0.3em;
+	text-align: center;
+	-webkit-hyphens:none;
+	-webkit-font-smoothing: subpixel-antialiased;}
+
+
+				
+				/* body text */
+div.bodyTxt {
+		
+font: 0.95em/normal "Arial", Helvetica, Padauk, sans-serif !important;
+			-webkit-font-smoothing: subpixel-antialiased;
+			margin: 0.20em 0em 0em 0em;
+			
+			}
+
+div.relatedContent p {
+	font: 0.75em "Arial", Helvetica, Padauk, sans-serif !important;
+	margin: 2.5em 0em 0em 0em;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+/*citations*/
+div.groupFootnote:before {
+	font: 1em Arial, Helvetica, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+	color: grey;
+	content: "_______________";
+}
+
+div.groupFootnote p{
+	font: 0.75em Arial, Padauk, sans-serif;
+	margin: 1.25em 0em;
+	-webkit-font-smoothing: subpixel-antialiased;
+	text-indent:0em;
+}
+
+div.groupExtScrpCite p {
+	font-size: 0.75em;
+	margin-top: 1em;
+}
+
+div.groupExtScrpCite {
+	padding-top: .25em;
+	margin-right: 25%;
+}
+
+div.groupExt {
+	margin-top: 1.5em;
+}
+
+
+
+
+/* formatting command arguments______________________________*/
+.CI { text-align: center; margin-top: 0px; margin-bottom: 0px; padding: 0px; }
+.center { text-align: center; }
+.smcap { font-variant: small-caps; }
+.u { text-decoration: underline; }
+.bold { font-weight: bold;}
+
+
+/*MM________________________________________________________________*/
+
+div.south_center {
+			width: 100% !important;
+			float: right;
+			line-height: 1.20em !important;
+			display: inline-block;
+			margin: .5em 0 1.5em 0;
+			clear:both;}
+
+div.south_left {
+			width: 50% !important;
+			float: left;
+			line-height: 1.20em !important;
+			display: inline-block;
+			margin: .5em 0 1.5em 0;
+			clear:both;}
+
+div.east_left{ 
+		   width: 30% !important;
+           float: right;
+           margin: .2em 0 0 1em !important;
+           line-height: 1.20em !important;
+           display: inline-block;
+		   clear:both;}
+
+div.east_right{ 
+		   width: 30% !important;
+           float: right;
+           margin: .2em 0 .3em 1em !important;
+           line-height: 1.20em !important;
+           display: inline-block;
+		   clear:both;}
+
+
+/*IMAGES_____________________________________________________________________*/
+
+img, figure { 	width: 100% !important;
+      			vertical-align: text-top;
+				margin: 0em;
+				display: inline-block;
+				clear:both;
+}
+
+
+/* CAPTIONS----------------------*/
+
+div.east_right p, div.east_left p{
+	border-bottom: thin solid #3d3d3d;
+	color:#3d3d3d;
+	font: 0.75em/1.1em "TrebuchetMS", "Trebuchet MS", Arial, Helvetica, Padauk, sans-serif;
+	margin: 0.75em 0em 1.25em 0em;
+	padding-bottom:.85em;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+/*LINK ELEMENTS_______________________________________________________________*/
+
+	/*apple: ibooks, ipad, iphone*/
+a:link    {	-webkit-text-fill-color: #3fa2bf;
+			-webkit-tap-highlight-color: silver;} 
+a:visited { -webkit-text-fill-color: gray;text-decoration: none;
+			-webkit-tap-highlight-color: silver;}
+a:hover   {-webkit-text-fill-color: blue;text-decoration: none;
+			-webkit-tap-highlight-color: silver;} 
+a:active  { -webkit-text-fill-color: maroon;
+			-webkit-tap-highlight-color: silver;} 
+			
+	/*web browsers + other */
+
+	a:link    {color:#3fa2bf;}  
+	a:visited {color:#c9c9c9; text-decoration: none;}
+	a:hover   {color:#0000FF;text-decoration: none;} 
+	a:active  {color:#800000;} 
+
+/* MOBI */
+
+e:link	 	{color:#3fa2bf;} 
+e:visited	{color:#c9c9c9; text-decoration: none;}
+e:active		{color:#800000;} 
+e:hover		{color:#0000FF; text-decoration: none;} 
+e:focus		{color:#3fa2bf; background-color:#c5b587;}
+
+/*______________________________________________________2-9-13_______*/	 
+
+
+
+
+
+

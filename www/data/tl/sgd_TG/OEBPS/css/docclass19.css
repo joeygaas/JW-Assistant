@@ -1,0 +1,285 @@
+
+/* docclass 125 Appendix TOC A, B NWT */ /* 9-30, 10-15, 1-11*/
+
+body { margin: 5%;
+		text-align: left;
+		-webkit-font-smoothing: subpixel-antialiased;
+		font-family:'Helvetica Neue', 'HelveticaNeue', "Arial", Helvetica, sans-serif;}
+
+h1 { 
+
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+text-align:left;
+color:#75000b;
+font-size:1.5em;
+font-weight:200;
+-webkit-font-smoothing: subpixel-antialiased;
+margin-top: 1.5em;
+margin-left:0em;}
+
+h2{ font: 1.2em/1.25em 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+text-align:left;
+color:#75000b;
+font-weight:200;
+margin: 1em 0;
+-webkit-font-smoothing: subpixel-antialiased;}
+
+h1.strong, h2.strong, h2 strong, h1 strong {font-weight:200;}
+
+
+
+/* p dec */ 
+
+
+p { font-family:'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: subpixel-antialiased;}
+
+
+div.groupTOC ol.source li p.sm span.txtSrcBullet {font-family:'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif; }
+
+
+div.pGroup { font-size: 1em;
+font-family:'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+line-height:1.25em;} 
+
+
+div.groupTOC { margin-top:2em; font-family:'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;} 
+
+p:first-child{ margin-top:0em;}
+
+/* Bullet list */ 
+
+li { list-style-type:none;
+
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif !important;
+margin:-1em 0 0 0;
+/*text-indent:-6.25em; /*mobi value 6.5*/
+text-indent:-5.9em; /*epub value -5.75*/
+padding-left:4em;}
+
+/* Txt Src Bullet & TOC */
+
+ .txtSrcBullet { /*maroon TOC bullets*/
+
+border: 1px solid #3d3d3d;
+color:#e5e5e5;
+display:inline-block;
+font: 1.2em 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif !important;
+font-weight:500;
+height:1.5em;
+margin-left:-24px; /* flush left margin*/
+padding:4px 2px 0px 2px;
+text-align:center;
+vertical-align:middle;
+text-indent:0em;
+background:#75000b;
+-webkit-font-smoothing: subpixel-antialiased;
+-webkit-hyphens:none;
+width:3em;
+clear:both;}
+
+/*TOC Links*/
+
+/*bullet #*/ 
+div.groupTOC ol.source li>p.sm { 
+text-align:left;
+margin-left:-.2em; /*flush left box*/
+font-family: 'Helvetica Neue', 'HelveticaNeue', "Arial", Helvetica, sans-serif;
+-webkit-font-smoothing: subpixel-antialiased; }
+
+div.groupTOC ol.source li>p.sm strong {font: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;}
+
+/*question*/ 
+
+
+div.groupTOC ol.source li>p.sm a { 
+list-style-position: outside;
+font: 1.1em/1.2em 'Helvetica Neue', 'HelveticaNeue', "Arial", Helvetica, sans-serif;
+text-align:left;
+padding-left:2.9em; /*wrap without text-indent use*/
+
+margin-right:0em; /*for eoub*/
+margin-left:0em; /*for mobi*/
+-webkit-font-smoothing: subpixel-antialiased; }
+
+div.groupTOC ol.source li {margin: 1em 0em .75em 1.5em;
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;} 
+
+
+div.groupTOC ol.source li:last-child {margin-bottom:1em;}
+.txtSrcBullet + a {text-indent:0em;}
+
+/*exception to bullet treatment - in boxes as text - duplicate dec intended 10-18*/ 
+
+
+
+div.boxSupplement .txtSrcBullet {
+
+border: 0px solid #F9F8F4;
+-webkit-box-shadow: #F9F8F4 0px 0px 0px;
+-moz-box-shadow: #F9F8F4 0px 0px 0px;
+box-shadow: 0px 0px 0px 0px #F9F8F4;
+background-color: #F9F8F4;
+clear:both;} /*bullet in box*/ 
+
+
+div.boxSupplement .txtSrcBullet {
+margin: 0em !important;
+line-height: 1.20em !important;
+text-align:left;
+vertical-align:top;
+color: black;
+font: 1.5em Arial, Helvetica, sans-serif !important;
+height:0px; width:0px;
+padding:0px;
+text-indent:-1em;
+
+-webkit-font-smoothing: subpixel-antialiased;
+
+clear:both;} /*__________________________________________*/
+
+div.boxSupplement .ol.source.li, ul.source, div.boxContent ul.noMarker { list-style-type:none;} 
+div.groupTOC ol.source li:last-child {margin-bottom:2em;}
+
+/* li treatments */ ol.source, .dt, .nomarker, ul.source {list-style-type:none;} 
+.txtSrcBullet {font-size:100%; font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;} 
+ul.nomarker, div.diagram.noMarker, ul.noMarker {list-style-type:none;}
+
+div.boxSupplement.rule{ background-color: #F9F8F4;
+border:1px solid silver;
+display:table-cell;
+margin:16px;
+padding:24px 30px;}
+
+div.boxTtl strong {
+
+font: 1.2em/1.25em 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+text-align:left;
+color:#75000b;
+font-weight:200;
+margin: 0.1em 0 .5em 0em;
+-webkit-font-smoothing: subpixel-antialiased; }
+
+/*box content*/ div.boxContent {
+font-size: 0.95em;
+-webkit-font-smoothing: subpixel-antialiased;
+text-align: left;
+margin: 0.1em 0 0 0;
+}
+
+div.boxContent .noMarker ul.source{ margin-left:0em;padding:0em; text-indent:0em; } 
+
+div.boxContent .noMarker {margin-left:0em;padding:0em; text-indent:0em; }
+
+div.boxContent p.sc {
+
+font-size: 0.95em;
+line-height:1.25em;
+text-align: left;
+padding-top: 0em;
+margin-top: 0em;
+padding-left:0em;
+text-indent:0em;
+margin-bottom: 0.5em;
+}
+
+div.boxContent li p.sc {
+
+margin:2em 0em;
+text-indent:0em;
+font-size: 0.95em;
+line-height:1.25em;
+text-align: left;
+padding-top: 0em;
+margin-left:0em;}
+
+div.boxContent div.west_left li p.sc {
+
+font-size: 0.95em;
+line-height:1.25em;
+text-align: left;
+padding-top: 1em;
+margin-left: 0em;}
+
+ul.source li p.sc .txtSrcBullet {
+
+font-size: 0.95em;
+line-height:1.25em;
+text-align: left;
+padding-top: 0em;
+margin-left: 0em;
+
+}
+
+div.boxContent div.west_left{
+
+float: left;
+margin: 0em -3em 0 5em !important;
+line-height: 1.20em !important;
+display: inline-block;
+vertical-align:top;
+clear:left;}
+
+li div.west_left {
+
+vertical-align: middle;
+clear:left; }
+
+/************************************/
+
+/* navigation */ /*retain p nav to enforce arial*/ 
+p.w_navigation.w_biblebookname a:active, 
+a:active, 
+p.w_navigation.w_biblebookname a:link, a:link, 
+p.w_navigation.w_biblebookname a:visited, a:visited
+
+{
+
+font-family:inherit;
+font-weight: 200;
+-webkit-text-fill-color: #6195c7;
+color: #6195c7; }
+
+p.w_navigation.w_biblebookname a:hover, a:hover {
+
+-webkit-text-fill-color: grey;
+color: grey; }
+
+/* MOBI */
+
+e:link {
+
+color: #6195c7; }
+
+e:visited {
+
+color: #6195c7;
+
+text-decoration: none; }
+
+e:active {
+
+color: #6195c7; }
+
+e:hover {
+
+color: #666;
+
+text-decoration: none; }
+
+e:focus {
+
+color: #3fa2bf;
+
+background-color: #c5b587; }
+
+img, figure {
+
+vertical-align: top;
+clear:left;
+-webkit-font-smoothing: subpixel-antialiased; 
+margin:0em;
+padding:0em;}
+
+
+

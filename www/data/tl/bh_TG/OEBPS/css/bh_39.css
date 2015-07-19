@@ -1,0 +1,18 @@
+/* bh_39.css - Front Cover */
+@import "default.css";
+  
+/* ------------------------------------------------------ */
+
+body { 
+	text-align: center; 
+}
+
+h1 { 
+	display: none; 
+}
+
+img, figure { 
+	text-align: center; 
+}
+
+/* ------------------------------------------------------ */

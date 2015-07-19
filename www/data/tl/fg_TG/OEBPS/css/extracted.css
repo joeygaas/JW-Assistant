@@ -1,0 +1,169 @@
+/* 	extracted.CSS 10-12 */
+/* 		HISTORY:   validated 1-4-13 modified 5-22-13, revalidated 5-22-13*/
+/*  	TABLE OF CONTENTS  10-8-12*/
+
+
+/* 1. @ function */
+@page 			{    
+						border: .5ex; 
+						}
+		
+body 		{			margin: 5%;
+						-webkit-font-smoothing: subpixel-antialiased;
+}
+
+/*  2. Headers------*/
+h1 { 					text-align: left;
+						font-size:2.5em;
+						-webkit-hyphens:none;
+						hyphens:none; }
+
+h2, h3, h4, h5, h6 { 	text-align: left;
+						-webkit-hyphens:none;
+						hyphens:none; }
+
+/* 3.  P dec -------*/
+p {
+						-webkit-font-smoothing: subpixel-antialiased;
+						orphans: 2;
+						widows: 2;
+						font: 1em Arial, Helvetica, sans-serif !important;
+}
+
+div.groupExt.groupExtPubRef{
+	font: bold 2em Arial, Helvetica, Padauk, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+	margin: 2.25em 0em;
+}
+
+div.groupExt.groupExtPubRef.extPubRef p {
+	font: 2em Arial, Helvetica, Padauk, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+	margin: 1.25em 0em;
+	text-indent:0em;
+}
+
+div.extPubRef p{
+	font: 2em Arial, Helvetica, Padauk, sans-serif !important;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+
+
+/*citations*/
+
+div.groupFootnote p{
+	font: 0.75em  Arial, Padauk, serif;
+	margin: 1.25em 0em;
+	text-indent:0em;
+}
+
+div.groupExtScrpCite  p {
+	font-size: 0.75em;
+	margin-top: 1em;
+}
+
+div.groupExtScrpCite {
+	padding-top: .25em;
+}
+
+div.groupExt {
+	margin-top: 2em;
+	font: 1em Arial, Helvetica, Padauk, sans-serif !important;
+}
+
+p.w_pagenavnum {
+	font-size: large;
+}
+
+
+p.qu, p.w_question {
+				font: 0.79em/1.11em "TrebuchetMS", "Trebuchet MS", Arial, Helvetica, Padauk, sans-serif !important;
+				margin: 0em 0em 0.22em 0em;
+				-webkit-font-smoothing: subpixel-antialiased;
+    			color: #1f9c0a;}
+
+
+/* DIV tag structures-----------------------------------*/
+
+div.closingContent{
+				background-color: #f3f3f5;
+				page-break-inside: avoid;
+				-webkit-column-break-inside: avoid;
+				margin-bottom: 2em;
+				line-height: normal;
+				padding: 1.20em;
+}
+
+div.closingContent p {
+				font: 0.85em "Times New Roman", Times, Padauk, serif !important;
+				-webkit-font-smoothing: subpixel-antialiased;
+				padding-top: 1.5em;
+				text-align: center;
+}
+
+
+
+/* Supplemental boxes */
+div.boxSupplement {
+				margin: 1em 0em;
+				padding: 1.25em 2.25em;
+					/*	page-break-before: always;*/
+				overflow:hidden;
+				background-color: #f3f3f5;
+				box-shadow: 10px 10px 5px #888888;
+				/*Shadow*/  
+   				-moz-box-shadow:inset 0 0 7px #888888;  /* browser ereaders - chrome */
+   				-webkit-box-shadow:inset 0 0 7px #c9c9c9;  /*apple */
+   				box-shadow:inset 0 0 7px #888888;   /*other */
+				clear: both;
+}
+
+
+
+/*-------------------------------------------*/
+.CI 		{ text-align: center; margin-top: 0px; margin-bottom: 0px; padding: 0px; }
+.center 	{ text-align: center; }
+.smcap 		{ font-variant: small-caps; }
+.u 			{ text-decoration: underline; }
+.bold 		{ font-weight: bold;}
+
+
+/*LINK ELEMENTS --------------------------------------------------------*/
+
+/*apple: ibooks, ipad, iphone */
+a:link    {-webkit-text-fill-color: #3fa2bf;
+		   -webkit-tap-highlight-color: silver;
+			font-size: 1.2em;
+			margin-bottom:1em;}  
+a:visited {-webkit-text-fill-color: gray;text-decoration: none;
+           -webkit-tap-highlight-color: silver;
+			font-size: 1.2em;
+			margin-bottom:1em;}
+a:hover   {-webkit-text-fill-color: blue;text-decoration: none;
+           -webkit-tap-highlight-color: silver;
+			font-size: 1.2em;
+			margin-bottom:1em;} 
+a:active  {-webkit-text-fill-color: maroon;
+           -webkit-tap-highlight-color: silver;
+			font-size: 1.2em;
+			margin-bottom:1em;} 
+
+
+/*web browsers readers + other */
+
+		a:link    {color:#3fa2bf;}
+		a:visited {color:#c9c9c9; text-decoration: none;}
+		a:hover   {color:#0000FF;text-decoration: none;} 
+		a:active  {color:#800000;} 
+
+/* MOBI */
+
+e:link	 	{color:#3fa2bf;} 
+e:visited	{color:#c9c9c9; text-decoration: none;}
+e:active		{color:#800000;} 
+e:hover		{color:#0000FF; text-decoration: none;} 
+e:focus		{color:#3fa2bf; background-color:#c5b587;}
+
+/*______________________________________________________2-9-13_______*/	 
