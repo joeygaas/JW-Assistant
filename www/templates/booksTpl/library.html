@@ -3,16 +3,9 @@
     <ion-content>
     <article class="row">
       <div class="col col-center">
-        <a class="item item-thumbnail-left" href="#/book">
-          <img src="/img/placeholder.png" />
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsu dolor set amet.</p>
-        </a>
-
-        <a class="item item-thumbnail-left" href="#/book">
-          <img src="/img/placeholder.png" />
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsu dolor set amet.</p>
+        <a ng-repeat="book in books" class="item item-thumbnail-left" href="#/book/{{ book.abr }}">
+          <img ng-src="{{ book.img }}" />
+          <h2>{{ book.description }}</h2>
         </a>
       </div><!-- /.col -->
     </article><!-- /.row -->

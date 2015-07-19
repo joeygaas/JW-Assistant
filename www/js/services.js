@@ -14,7 +14,7 @@ angular.module('jwApp')
 *
 *@description path of the file in the storage
 */
-.constant('path', '/resources/') // base path
+.constant('path', '/data/') // base path
 .constant('langFile', 'lang.json') // language file 
 .constant('configFile', '/config.json') // menu file
 .constant('booksList', '/booksList.json') // books list
@@ -71,8 +71,26 @@ function($http, path, langFile, configFile, booksList){
 		*/
 		getBooksList : function(lang){
 			$http.get(path + lang + booksList).success(function(response){
-				window.localStorage['booksList'] = angular.toJson(response);
+				window.localStorage['booksList'] = angular.toJson(response.books);
 			});
+		},
+
+
+		/*
+		*@GetData function
+		*@name getBookToc
+		*
+		*@param lang {{ string }} file language
+		*@return xml data
+		*
+		*@description get the books table of contents
+		*/
+		getBookToc : function(lang, title){
+			var xmlhttp = new xMLHttpRequest();
+			xmlhttp.open('GET', path + lang + title + 'OEBPS/toc.ncx', 'false');
+			xmlhttp.send();
+
+			return xmlhttp.responseXML;
 		}
 	};
 }])

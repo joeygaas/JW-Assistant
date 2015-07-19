@@ -43,9 +43,9 @@ var jwApp = angular.module('jwApp', ['ionic', 'ngCookies'])
 		})
 
 		// Book Routes
-		.state('book', {
-			url: '/book/:id',
-			templateUrl: basePath + 'booksTpl/tblContents.html',
+		.state('books`', {
+			url: '/book/:path',
+			templateUrl: basePath + 'booksTpl/content.html',
 			controller: 'BookController'
 		});
 }]);

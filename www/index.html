@@ -66,29 +66,8 @@
 			<!-- Content -->
 			<ion-content scroll="false">
 				<ion-list>
-					<a nav-direction="swap" menu-toggle ng-repeat="menu in menus" ng-href="{{ menu.path }}">
-						<ion-item>
-							<h2>{{ menu.title }}</h2>
-						</ion-item>
-					</a>
-				</ion-list>
-			</ion-content>
-		</ion-side-menu>
-
-		<!-- Right Menu -->
-		<ion-side-menu side="right" width="200">
-			<!-- Header bar -->
-			<ion-header-bar class="bar-dark">
-				<h1 class="title">{{ sideMenuRightHeader }}</h1>
-			</ion-header-bar>
-
-			<!-- Content -->
-			<ion-content scroll="false">
-				<ion-list>
-					<a ng-repeat="lang in languages" ng-click="setLang(lang.abr)" href="">
-						<ion-item>
-							<h2>{{ lang.description }}</h2>
-						</ion-item>
+					<a nav-direction="swap" menu-toggle ng-repeat="menu in menus" class="item" ng-href="{{ menu.path }}">
+						<h2>{{ menu.title }}</h2>
 					</a>
 				</ion-list>
 			</ion-content>

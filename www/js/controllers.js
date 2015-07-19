@@ -100,6 +100,10 @@ function($scope, $rootScope, GetData){
 	// Extract the needed data from the localStorage
 	var appLang = localStorage['appLang']; // Application current language
 	var config = angular.fromJson(localStorage['config']); // configuration files
+	var booksList = angular.fromJson(localStorage['booksList']) // books list
 
-	
+	// Pass the variables into the view
+	$scope.books = booksList; // books list
+
+	// TODO : Add page title and get xml data from service
 }]);
