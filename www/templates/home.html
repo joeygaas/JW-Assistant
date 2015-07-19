@@ -1,20 +1,13 @@
-<ion-view view-title="JW Assistant">
-    <!-- Main content -->
-    <ion-content>
-    <article class="row">
-      <div class="col col-center">
-        <a class="item item-thumbnail-left" href="#/book">
-          <img src="/img/placeholder.png" />
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsu dolor set amet.</p>
-        </a>
-
-        <a class="item item-thumbnail-left" href="#/book">
-          <img src="/img/placeholder.png" />
-          <h2>Lorem ipsum dolor</h2>
-          <p>Lorem ipsu dolor set amet.</p>
-        </a>
-      </div><!-- /.col -->
-    </article><!-- /.row -->
-  </ion-content>
+<ion-view view-title="{{ pageTitle }}">
+	<ion-content>
+		<article class="row">
+			<div class="col col-center">
+				<a ng-repeat="item in items" class="item item-thumbnail-left" href="#/book/{{ item.id }}">
+					<img ng-src="{{ item.img }}">
+					<h2>{{ item.title }}</h2>
+					<p>{{ item.description }}</p>
+				</a>
+			</div><!-- /.col -->
+		</article><!-- /.row -->
+	</ion-content>
 </ion-view>

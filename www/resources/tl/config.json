@@ -1,0 +1,12 @@
+{"menu" : [
+			{"title" : "Mga Nota", "path" : "#/notes", "icon" : ""},
+			{"title" : "Mga Libro", "path" : "#/", "icon" : ""},
+			{"title" : "Opisyal na Website", "path" : "https://www.jw.org/tl", "icon" : ""},
+			{"title" : "Tungkol sa Application", "path" : "#/about", "icon" : ""},
+			{"title" : "Lisensya", "path" : "#/about/license", "icon" : ""}
+		  ],
+ 
+ "sideMenuLeftHeader" : "JW Assistant",
+ "sideMenuRightHeader" : "Mga Lingwahe"
+
+}

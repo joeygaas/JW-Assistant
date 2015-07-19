@@ -1,11 +1,5 @@
 # JW-Assistant
-
-routes
-	-home
-	-book
-		-overview
-		-chapter overview
-	-settings
-	-about
-	-license
-
+	
+	TODO : 
+		- add ng-click function to the ion-side-menu right language selection
+		- modify the booksList.json file in the resources 
