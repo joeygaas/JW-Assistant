@@ -35,9 +35,6 @@
 		<ion-side-menu-content>
 			<!-- Navbar -->
 			<ion-nav-bar class="bar-calm">
-				<!-- Back Button -->
-				<ion-nav-back-button></ion-nav-back-button>
-
 				<!-- Primary Buttons -->
 				<ion-nav-buttons side="primary">
 					<!-- Menu Button -->
@@ -60,16 +57,16 @@
 		</ion-side-menu-content>
 
 		<!-- Left Menu -->
-		<ion-side-menu side="left" width="200">
+		<ion-side-menu expose-aside-when="large" side="left" width="200">
 			<!-- Header bar -->
 			<ion-header-bar class="bar-dark">
-				<h2 class="title">{{ sideMenuLeftHeader }}</h2>
+				<a nav-direction="swap" menu-toggle href="#/"><h2 class="title">{{ sideMenuLeftHeader }}</h2></a>
 			</ion-header-bar>
 
 			<!-- Content -->
 			<ion-content scroll="false">
 				<ion-list>
-					<a ng-repeat="menu in menus" ng-href="{{ menu.path }}">
+					<a nav-direction="swap" menu-toggle ng-repeat="menu in menus" ng-href="{{ menu.path }}">
 						<ion-item>
 							<h2>{{ menu.title }}</h2>
 						</ion-item>
@@ -88,7 +85,7 @@
 			<!-- Content -->
 			<ion-content scroll="false">
 				<ion-list>
-					<a ng-repeat="lang in languages" href="">
+					<a ng-repeat="lang in languages" ng-click="setLang(lang.abr)" href="">
 						<ion-item>
 							<h2>{{ lang.description }}</h2>
 						</ion-item>

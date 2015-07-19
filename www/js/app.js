@@ -28,16 +28,24 @@ var jwApp = angular.module('jwApp', ['ionic', 'ngCookies'])
 	*/
 	var basePath = '/templates/'; // tempalte base path
 	$stateProvider
-		.state('index', {
+		// Welcome screen route
+		.state('home', {
 			url: '/',
 			templateUrl: basePath + 'home.html',
 			controller: 'HomeController'
 		})
 
+		// 
+		.state('books', {
+			url: '/books',
+			templateUrl: basePath + 'booksTpl/library.html',
+			controller: 'BookController'
+		})
+
 		// Book Routes
 		.state('book', {
 			url: '/book/:id',
-			templateUrl: basePath + 'booksTpl/overview.html',
+			templateUrl: basePath + 'booksTpl/tblContents.html',
 			controller: 'BookController'
 		});
 }]);

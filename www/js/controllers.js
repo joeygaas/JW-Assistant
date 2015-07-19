@@ -80,18 +80,12 @@ function($scope, $rootScope, GetData){
 *@jwApp controller
 *@name HomeController
 *
-*@description contains the #/ route behavior functions
+*@description contains the #/ (index) route behavior functions
 */
 .controller('HomeController', ['$scope', '$rootScope', 'GetData',
 function($scope, $rootScope, GetData){
 	// Extract the files from the localStorage
-	var appLang = localStorage['appLang']; // Application current language
-	var config = angular.fromJson(localStorage['config']); // configuration files
-
-	// Set the page title equevalent to the menu title that point to this page. I use config value 
-	// here to let the title of the page change its value according to the application current language.
-	$scope.pageTitle = config.menu[1]['title'];
-
+	var appLang = localStorage['appLang']; // Application current language	
 
 }])
 
@@ -103,5 +97,9 @@ function($scope, $rootScope, GetData){
 *@description contains the #/book/:id route behavior functions
 */
 .controller('BookController', ['$scope', '$stateParams', function($scope, $stateParams){
-	console.log($stateParams.id)
+	// Extract the needed data from the localStorage
+	var appLang = localStorage['appLang']; // Application current language
+	var config = angular.fromJson(localStorage['config']); // configuration files
+
+	
 }]);
