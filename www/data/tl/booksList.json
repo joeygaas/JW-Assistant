@@ -3,6 +3,7 @@
 			 {"description" : "ANU BA Talaga  ANG ITINUTURO NG BIBLIYA?", "abr" : "bh_TG", "img" : "data/tl/bh_TG/OEBPS/images/1102005169_TG_cvr.jpg"},
 			 {"description" : "MAGANDANG BALITA MULA SA DIYOS", "abr" : "fg_TG", "img" : "data/tl/fg_TG/OEBPS/images/1102012181_TG_cvr.jpg"},
 			 {"description" : "Intruduksyon sa Salita ng Diyos", "abr" : "igw_TG", "img" : "data/tl/igw_TG/OEBPS/images/1102013691_TG_cvr.jpg"},
-			 {"description" : "Tulong sa Pag-aaral ng Salita ng Diyos", "abr" : "sgd_TG", "img" : "data/tl/sgd_TG/OEBPS/images/1102013690_TG_cvr.jpg"}
+			 {"description" : "Tulong sa Pag-aaral ng Salita ng Diyos", "abr" : "sgd_TG", "img" : "data/tl/sgd_TG/OEBPS/images/1102013690_TG_cvr.jpg"},
+			 {"description" : "Pagsusuri sa Kasulatan Araw-araw", "abr" : "es15_TG", "img" : "data/tl/es15_TG/OEBPS/images/1102015014_TG_cvr.jpg"}
 		   ]
 }

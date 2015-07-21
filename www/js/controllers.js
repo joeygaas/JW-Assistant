@@ -61,18 +61,14 @@ function($scope, $rootScope, GetData){
 	// Depending on how big the data is.
 	$scope.loadAssets();
 
-	// extract the config file from the local storage
-	var config = angular.fromJson(localStorage['config']);
+	// Extract the needed files 
+	var config = angular.fromJson(localStorage['config']); // application config file
+	var languages = angular.fromJson(localStorage['lang']); // application supported languages
+	
+	// Set the ion-side-menu rigth items
+	$rootScope.sideMenuRightHeader = config.sideMenuRightHeader; // side menu header
+	$rootScope.languages = languages; // side menu itmes
 
-	// Set the Global default value of the ion-side-menu left.
-	// Other routes will overide this value.
-	$rootScope.sideMenuLeftHeader = config.sideMenuLeftHeader;   // ion-side-menu left header
-	$rootScope.menus = config.menu; 						   // ion-side-menu left items
-
-	// Set the Global default value of the ion-side-menu right. 
-	// Other routes will not overide this value.
-	$scope.sideMenuRightHeader = config.sideMenuRightHeader;	   // ion-side-menu right header
-	$scope.languages = angular.fromJson(localStorage['lang']); // ion-side-menu righ items
 }])
 
 
@@ -84,26 +80,95 @@ function($scope, $rootScope, GetData){
 */
 .controller('HomeController', ['$scope', '$rootScope', 'GetData',
 function($scope, $rootScope, GetData){
+	// Hide the book table of contents navigation
+	$rootScope.book = false;
+
 	// Extract the files from the localStorage
 	var appLang = localStorage['appLang']; // Application current language	
+	var config = angular.fromJson(localStorage['config']); // application config file
+
+	// Set the ion-side-menu left values
+	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
+	$rootScope.menus = config.menu;  // ion-side-menu left items
 
 }])
 
 
 /*
 *@jwApp controller
-*@name TopController
+*@name LibraryController
 *
-*@description contains the #/book/:id route behavior functions
+*@description contains the /library route functions
 */
-.controller('BookController', ['$scope', '$stateParams', function($scope, $stateParams){
+.controller('LibraryController', ['$scope', '$rootScope', 'GetData',
+function($scope, $rootScope, GetData){
+	// Hide the book table of contents navigation
+	$rootScope.book = false;
+
 	// Extract the needed data from the localStorage
 	var appLang = localStorage['appLang']; // Application current language
 	var config = angular.fromJson(localStorage['config']); // configuration files
 	var booksList = angular.fromJson(localStorage['booksList']) // books list
 
+	// Set the page title
+	$scope.pageTitle = config.libraryPageTitle;
+
+	// Set the ion-side-menu left values
+	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
+	$rootScope.menus = config.menu;  // ion-side-menu left items
+
 	// Pass the variables into the view
 	$scope.books = booksList; // books list
 
-	// TODO : Add page title and get xml data from service
+}])
+
+
+/*
+*@jwApp controller
+*@name BookController
+*
+*@description contains the #/book/:book route behavior functions
+*/
+.controller('BookController', ['$scope', '$rootScope', '$stateParams', 'GetData', 'UtilityServices',
+function($scope, $rootScope, $stateParams, GetData, UtilityServices){
+	/*
+	*@BookController function
+ 	*@name loadContent
+	*
+	*@description load the slected book content as a template
+	*/
+	$rootScope.loadContent = function(path){
+		$scope.content = path;
+	}
+
+	// Hide the book table of contents navigation
+	$rootScope.book = true;
+
+	// Extract the needed data from the localStorage
+	var appLang = localStorage['appLang']; // Application current language
+	var config = angular.fromJson(localStorage['config']); // configuration files
+	var booksList = angular.fromJson(localStorage['booksList']) // books list
+	
+	// Set the page title
+	$scope.pageTitle = $stateParams.title;
+
+
+
+	// Get the epub book toc.ncx and genereate needed content from it
+	GetData.getBookTocXML(appLang, $stateParams.book, function(data){
+		// convert the books toc.xml to json object for easy access
+		var bookNav = UtilityServices.bookNavToJson(data, '/data/' + appLang + '/' + $stateParams.book);
+		
+		$rootScope.sideMenuLeftHeader = config.library; // ion-side-menu-header
+		$rootScope.menus = bookNav; // ion-side-menu left items
+
+		// Set the default iframe src value
+		$scope.content = bookNav[0].path;
+		// Set the height of the iframe according to 
+		// the device screen height  for better dislplay.
+		$('iframe').height(screen.height);
+
+
+	});
+
 }]);

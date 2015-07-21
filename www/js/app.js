@@ -13,7 +13,7 @@
 *
 *@description jwApp main module
 */
-var jwApp = angular.module('jwApp', ['ionic', 'ngCookies'])
+var jwApp = angular.module('jwApp', ['ionic'])
 
 /*
 *@jwApp config
@@ -32,20 +32,23 @@ var jwApp = angular.module('jwApp', ['ionic', 'ngCookies'])
 		.state('home', {
 			url: '/',
 			templateUrl: basePath + 'home.html',
-			controller: 'HomeController'
+			controller: 'HomeController',
+			cache: false
 		})
 
 		// 
-		.state('books', {
-			url: '/books',
+		.state('library', {
+			url: '/library',
 			templateUrl: basePath + 'booksTpl/library.html',
-			controller: 'BookController'
+			controller: 'LibraryController',
+			cache: false
 		})
 
 		// Book Routes
-		.state('books`', {
-			url: '/book/:path',
+		.state('books', {
+			url: '/book/:book/:title',
 			templateUrl: basePath + 'booksTpl/content.html',
-			controller: 'BookController'
+			controller: 'BookController',
+			cache: false
 		});
 }]);

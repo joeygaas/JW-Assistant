@@ -16,8 +16,8 @@
     <!-- ionic/angularjs -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- angularjs -->
-    <script src="lib/angularjs/angular-cookies.min.js"></script>
+    <!-- jQuery -->
+    <script src="lib/jquery/jquery-2.1.3.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -57,17 +57,38 @@
 		</ion-side-menu-content>
 
 		<!-- Left Menu -->
-		<ion-side-menu expose-aside-when="large" side="left" width="200">
+		<ion-side-menu side="left">
 			<!-- Header bar -->
 			<ion-header-bar class="bar-dark">
-				<a nav-direction="swap" menu-toggle href="#/"><h2 class="title">{{ sideMenuLeftHeader }}</h2></a>
+				<a menu-toggle ng-href="{{ sideMenuLeftHeader[0].path }}"><h2 class="title">{{ sideMenuLeftHeader[0].header }}</h2></a>
 			</ion-header-bar>
 
 			<!-- Content -->
-			<ion-content scroll="false">
+			<ion-content>
 				<ion-list>
-					<a nav-direction="swap" menu-toggle ng-repeat="menu in menus" class="item" ng-href="{{ menu.path }}">
+					<a ng-hide="book" menu-toggle="left" ng-repeat="menu in menus" class="item" ng-href="{{ menu.path }}">
 						<h2>{{ menu.title }}</h2>
+					</a>
+
+					<a ng-show="book" menu-toggle="left" ng-repeat="menu in menus" class="item" ng-click="loadContent(menu.path)">
+						<p>{{ menu.title }}</p>
+					</a>
+				</ion-list>
+			</ion-content>
+		</ion-side-menu>
+
+		<!-- Right menu -->
+		<ion-side-menu side="right">
+			<!-- Header bar -->
+			<ion-header-bar class="bar-stable">
+				<h2 class="title">{{ sideMenuRightHeader }}</h2>
+			</ion-header-bar>
+
+			<!-- Content -->
+			<ion-content>
+				<ion-list>
+					<a menu-toggle="right" ng-repeat="lang in languages" class="item" ng-click="setLang(lang.abr)">
+						<p>{{ lang.description }}</p>
 					</a>
 				</ion-list>
 			</ion-content>

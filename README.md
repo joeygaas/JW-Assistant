@@ -1,6 +1,7 @@
 # JW-Assistant
 	
 	TODO : 
-		- modify the booksList.json file in the resources
-		- add library.html page title and finish BookController 
+		- add search function and page
 		- add icons in the side-menu left items
+		- add itmes to home.html
+		- add notes function and page
