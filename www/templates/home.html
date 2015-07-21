@@ -1,15 +1,23 @@
 <ion-view view-title="JW Assitant">
 	<ion-content>
-		<div class="row bg">
+		<div class="row banner">
 			<div class="col">
-				
-			</div>
-			<div class="col">
-				
-			</div>
-			<div class="col">
-				
+				<h2>2015 Taunang Teksto</h2>
+				<p>“Magpasalamat kayo kay Jehova, sapagkat siya ay mabuti.”​<small>—Awit 106:1</small>.</p>
 			</div>
 		</div>
+
+		<div class="row arrow-box">
+			<p>Libro sa Pangangaral</p>
+		</div>
+
+		<article class="row ">
+	      <div class="col col-center">
+	        <a ng-repeat="book in books" class="item item-thumbnail-left widget" href="#/book/{{ book.abr }}/{{ book.description }}">
+	          <img ng-src="{{ book.img }}" />
+	          <h2>{{ book.description }}</h2>
+	        </a>
+	      </div><!-- /.col -->
+	    </article><!-- /.row -->
 	</ion-content>
 </ion-view>

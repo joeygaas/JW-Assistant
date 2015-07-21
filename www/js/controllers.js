@@ -86,10 +86,16 @@ function($scope, $rootScope, GetData){
 	// Extract the files from the localStorage
 	var appLang = localStorage['appLang']; // Application current language	
 	var config = angular.fromJson(localStorage['config']); // application config file
+	var booksList = angular.fromJson(localStorage['booksList']) // books list
+
+	$scope.books = booksList;
 
 	// Set the ion-side-menu left values
 	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
 	$rootScope.menus = config.menu;  // ion-side-menu left items
+
+	// set the height of the widget class
+	$('.widget').css('height', screen.height * .20 + 'px');
 
 }])
 
@@ -135,13 +141,13 @@ function($scope, $rootScope, $stateParams, GetData, UtilityServices){
 	*@BookController function
  	*@name loadContent
 	*
-	*@description load the slected book content as a template
+	*@description load the slected book contents in the iframe
 	*/
 	$rootScope.loadContent = function(path){
 		$scope.content = path;
 	}
 
-	// Hide the book table of contents navigation
+	// Show the book table of contents navigation
 	$rootScope.book = true;
 
 	// Extract the needed data from the localStorage
