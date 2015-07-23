@@ -39,7 +39,7 @@ function($http, path, langFile, configFile, booksList){
 		*/
 		getLang : function(){
 			$http.get(path + langFile).success(function(response){
-				window.localStorage['lang'] = angular.toJson(response);
+				localStorage['lang'] = angular.toJson(response);
 			});
 		},
 
@@ -55,7 +55,7 @@ function($http, path, langFile, configFile, booksList){
 		*/
 		getConfig : function(lang){
 			$http.get(path + lang + configFile).success(function(response){
-				window.localStorage['config'] = angular.toJson(response);
+				localStorage['config'] = angular.toJson(response);
 			});
 		},
 
@@ -71,7 +71,7 @@ function($http, path, langFile, configFile, booksList){
 		*/
 		getBooksList : function(lang){
 			$http.get(path + lang + booksList).success(function(response){
-				window.localStorage['booksList'] = angular.toJson(response.books);
+				localStorage['booksList'] = angular.toJson(response.books);
 			});
 		},
 
@@ -112,7 +112,103 @@ function($http, path, langFile, configFile, booksList){
 
 /*
 *@jwApp service
-*@name UtilityService
+*@name NotesCRUD
+*
+*@description handles notes CRUD functions
+*/
+.factory('NotesCRUD', [function(){
+	return {
+		/*
+		*@NotesCRUD method
+		*@name all
+		*
+		*@description get all the notes
+		*/
+		all : function(){
+			var storedNotes = angular.fromJson(localStorage['notes']);
+			if(storedNotes == undefined){
+				return false;
+			}
+
+			return storedNotes;
+		},
+
+
+		/*
+		*@NotesCRUD method
+		*@name get
+		*
+		*@description get a selected notes in the array
+		*/
+		get : function(title){
+			var storedNotes = angular.fromJson(localStorage['notes']);
+			
+			for(var i = 0; i < storedNotes.length; i++){
+				if(storedNotes[i]['title'] = title){
+					return storedNotes[i];
+				}
+			}
+			return false;
+		},
+
+
+		/*
+		*@NotesCRUD method
+		*@name remove
+		*
+		*@description remove the selected notes
+		*/
+		remove : function(title){
+			var storedNotes = angular.fromJson(localStorage['notes']);
+			for(var i = 0; i < storedNotes.length; i++){
+				if(storedNotes[i]['title'] == title){
+					delete storedNotes[i];
+				}
+			}
+
+
+			localStorage['notes'] = angular.toJson(storedNotes);
+
+			return true;
+		},
+
+
+		/*
+		*@NotesCRUD method
+		*@name save
+		*
+		*@description save the notes into the localStorage
+		*/
+		save : function(notes){
+			var storedNotes = angular.fromJson(localStorage['notes']);
+			var msg;
+
+			if(storedNotes != undefined){
+				// check if the notes title is already exist
+				for(var i = 0; i < storedNotes.length; i++){
+					if(storedNotes[i]['title'] == notes.title){
+						// prompt the user and let him choose another title
+						var title = prompt('Title already exist. Please add a new one');
+						storedNotes[i]['title'] = title; // store the new title
+					}
+				}
+				// add the new notes in the array
+				storedNotes.push(notes);
+			}else {
+				storedNotes = [];
+				storedNotes.push(notes); 
+			}
+
+			localStorage['notes'] = angular.toJson(storedNotes);
+			alert('Notes added successfuly'); // notify the user using alerbox 
+		}
+	};
+}])
+
+
+/*
+*@jwApp service
+*@name UtilityServices
 *
 *@description Application utitlity services
 */
@@ -131,7 +227,7 @@ function($http, path, langFile, configFile, booksList){
 			var navLabel = navMap[0].getElementsByTagName('navLabel'); // nav label array
 			var navContent = navMap[0].getElementsByTagName('content'); // nav content array (contains the src attribute)
 
-			for(var i =0; i < navLabel.length; i++){
+			for(var i = 0; i < navLabel.length; i++){
 				var label = navLabel[i].textContent; // navLabel textContent
 				var src = navContent[i].attributes[0].textContent; // navContent src attr textContent
 				
@@ -144,6 +240,6 @@ function($http, path, langFile, configFile, booksList){
 			}
 
 			return newData;
-		},
+		}
 	}
 }]);

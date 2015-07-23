@@ -26,7 +26,6 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
-    <script src="js/widgets.js"></script>
 
 </head>
 
@@ -45,7 +44,7 @@
 					</button>
 
 					<!-- Compose button -->
-					<button class="button button-icon">
+					<button ng-click="addNotes()" class="button button-icon">
 						<i class="icon ion-ios-compose-outline"></i>
 					</button>
 				</ion-nav-buttons>
@@ -106,5 +105,44 @@
 			</ion-content>
 		</ion-side-menu>
 	</ion-side-menus>
+
+	<!-- Add notes Modal box -->
+	<script id="add-notes.html" type="text/ng-template">
+		<div class="modal">
+			<!-- Modal header bar -->
+			<ion-header-bar class="bar-secondary">
+				<a href="#/notes" ng-click="closeAddNotes()" class="button button-clear button-positive">
+					Notes
+				</a>
+				<h1 class="title">Add Notes</h1>
+
+				<!-- Cancel button -->
+				<button ng-click="closeAddNotes()" class="button button-clear button-positive">
+					Cancel
+				</button>
+			</ion-header-bar>
+
+			<!-- Modal content area -->
+			<ion-content>
+				<form ng-submit="saveNotes(notes)">
+					<div class="list">
+						<label class="item item-input">
+							<input ng-model="notes.title" type="text" placeholder="Enter title here" required />
+						</label>
+
+						<label class="item item-input">
+							<textarea ng-model="notes.content" placeholder="Enter Your notes here..." required></textarea>
+						</label>
+						
+					</div>
+					<div class="padding">
+						<button type="submit" class="button button-block button-positive">
+							Save new Note
+						</button>
+					</div>
+				</form>
+			</ion-content>
+		</div>
+	</script>
 </body>
 </html>

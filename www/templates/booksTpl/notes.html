@@ -1,0 +1,13 @@
+<ion-view view-title="{{ pageTitle }}">
+	<ion-content>
+		<ion-list>
+			<div ng-if="noNotes" class="item ">
+				<h2>{{ noNotes }}</h2>
+			</div>
+
+			<a href="" ng-repeat="note in notesList" ng-click="editNotes(note.title)" class="item">
+				<h2>{{ note.title }}</h2>
+			</a>
+		</ion-list>
+	</ion-content>
+</ion-view>

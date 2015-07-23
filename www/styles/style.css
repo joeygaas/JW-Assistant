@@ -69,3 +69,17 @@ iframe {
 }
 
 
+/* modal */
+.modal {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, .75);
+}
+
+textarea {
+    height: 400px;
+}
+
+
+/* notes.html */
+a {
+    text-decoration: none;
+}

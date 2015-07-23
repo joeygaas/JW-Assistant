@@ -50,5 +50,13 @@ var jwApp = angular.module('jwApp', ['ionic'])
 			templateUrl: basePath + 'booksTpl/content.html',
 			controller: 'BookController',
 			cache: false
+		})
+
+		// Notes Routes
+		.state('notes', {
+			url: '/notes',
+			templateUrl: basePath + 'booksTpl/notes.html',
+			controller: 'NotesController',
+			cache: false
 		});
 }]);

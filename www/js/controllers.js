@@ -14,10 +14,10 @@ angular.module('jwApp')
 *
 *@description contains the app uitility functions
 */
-.controller('TopController', ['$scope', '$rootScope', 'GetData',
-function($scope, $rootScope, GetData){
+.controller('TopController', ['$scope', '$rootScope', '$ionicModal', 'GetData', 'NotesCRUD',
+function($scope, $rootScope, $ionicModal, GetData, NotesCRUD){
 	/*
-	*@TopController function
+	*@TopController method
 	*@name setLang
 	*
 	*@description set the application language
@@ -26,11 +26,11 @@ function($scope, $rootScope, GetData){
 		localStorage['appLang'] = lang;
 		// Reload the page
 		location.reload();
-	}
+	};
 
 
 	/*
-	*@TopController function
+	*@TopController method
 	*@name loadLang
 	*
 	*@description Store all the needed assets in localStorage, indexDB or webSQL
@@ -48,13 +48,68 @@ function($scope, $rootScope, GetData){
 	};
 
 
+	// Create add notes modal
+	 $ionicModal.fromTemplateUrl('add-notes.html', function(modal) {
+	    $scope.addNotesModal = modal;
+	 }, {
+	    scope: $scope
+	 });
+
+
+	/*
+	*@TopController method
+	*@name addNotes
+	*
+	*@description Show the add notes modal form
+	*/
+	$scope.addNotes = function(){
+		$scope.addNotesModal.show();
+	};
+
+
+	/*
+	*@TopController method
+	*@name cancelNotes
+	*
+	*@description Hide the add notes modal form
+	*/
+	$scope.closeAddNotes = function(){
+		$scope.addNotesModal.hide();
+	};
+
+
+	/*
+	*@TopController method
+	*@name editNotes
+	*
+	*@description Show the edit form with content
+	*/
+	$scope.editNotes = function(title){
+		var notesData = NotesCRUD.get(title);
+		$scope.addNotesModal.show();
+		// TODO: find solution on how to add old value in edit form
+	},
+
+
+	/*
+	*@TopController method
+	*@name saveNotes
+	*
+	*@description Save the notes in the local storage
+	*/
+	$scope.saveNotes = function(notes){
+		NotesCRUD.save(notes); // save the notes data in the localStorage
+		notes.title = "";
+		notes.content = "";
+	};	
+
 	// Get the app language value in the localStorage.
 	// If the value if undifined set the default value to tl( tagalog).
 	$scope.appLang = window.localStorage['appLang'];
 	if($scope.appLang == undefined){
 		// app language is undefined set the default value
-		window.localStorage['appLang'] = 'tl';
-		$scope.appLang = window.localStorage['appLang'];
+		localStorage['appLang'] = 'tl';
+		$scope.appLang = localStorage['appLang'];
 	}
 
 	// Store all the needed assets in the localStorage, indexDB or webSQL.
@@ -88,14 +143,14 @@ function($scope, $rootScope, GetData){
 	var config = angular.fromJson(localStorage['config']); // application config file
 	var booksList = angular.fromJson(localStorage['booksList']) // books list
 
-	$scope.books = booksList;
+	// Set the main content of the view
+	$scope.books = booksList; // list of books
+	$scope.YearlyTxt = config.YearlyTxt; // Yearly text
+	$scope.arrowBox = config.arrowBox; // arrow box label
 
 	// Set the ion-side-menu left values
 	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
 	$rootScope.menus = config.menu;  // ion-side-menu left items
-
-	// set the height of the widget class
-	$('.widget').css('height', screen.height * .20 + 'px');
 
 }])
 
@@ -138,7 +193,7 @@ function($scope, $rootScope, GetData){
 .controller('BookController', ['$scope', '$rootScope', '$stateParams', 'GetData', 'UtilityServices',
 function($scope, $rootScope, $stateParams, GetData, UtilityServices){
 	/*
-	*@BookController function
+	*@BookController method
  	*@name loadContent
 	*
 	*@description load the slected book contents in the iframe
@@ -176,5 +231,36 @@ function($scope, $rootScope, $stateParams, GetData, UtilityServices){
 
 
 	});
+
+}])
+
+
+/*
+*@jwApp controller
+*@name NotesController
+*
+*@description contains the #/notes route behavior functions
+*/
+.controller('NotesController', ['$scope', '$rootScope', 'NotesCRUD',
+function($scope, $rootScope, NotesCRUD){
+	$rootScope.book = false;
+
+	// Extract the needed data from the localStorage
+	var appLang = localStorage['appLang']; // Application current language
+	var config = angular.fromJson(localStorage['config']); // configuration files
+	
+	// Set the page title
+	$scope.pageTitle = config.notesPageTitle;
+
+	// Set the ion-side-menu left values
+	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
+	$rootScope.menus = config.menu;  // ion-side-menu left items
+
+	var notes = NotesCRUD.all(); // Get all the notes
+	if(!notes){
+		$scope.noNotes = "notes is empty"
+	}else {
+		$scope.notesList = notes;
+	}
 
 }]);

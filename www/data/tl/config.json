@@ -15,6 +15,14 @@
 
  "sideMenuRightHeader" : "Mga Lingwahe",
  "libraryPageTitle" : "Aklatan",
- "tblContentPageTitle" : "Mga Nilalaman"
+ "tblContentPageTitle" : "Mga Nilalaman",
+ "notesPageTitle" : "Mga Nota",
+ "arrowBox" : "Libro Sa Pangangaral",
+
+ "YearlyTxt" : [
+ 				{"header" : "2015 Taunang Teksto"},
+ 				{"text" : "“Magpasalamat kayo kay Jehova, sapagkat siya ay mabuti.”​"},
+ 				{"verse" : "—Awit 106:1"}
+ 			  ]
 
 }

@@ -1,14 +1,14 @@
-<ion-view view-title="JW Assitant">
+<ion-view view-title="JW Assistant">
 	<ion-content>
 		<div class="row banner">
 			<div class="col">
-				<h2>2015 Taunang Teksto</h2>
-				<p>“Magpasalamat kayo kay Jehova, sapagkat siya ay mabuti.”​<small>—Awit 106:1</small>.</p>
+				<h2>{{ YearlyTxt[0].header }}</h2>
+				<p>{{ YearlyTxt[1].text}}​<small>{{ YearlyTxt[2].verse }}</small>.</p>
 			</div>
 		</div>
 
 		<div class="row arrow-box">
-			<p>Libro sa Pangangaral</p>
+			<p>{{ arrowBox }}</p>
 		</div>
 
 		<article class="row ">
