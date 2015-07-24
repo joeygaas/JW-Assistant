@@ -53,9 +53,15 @@ var jwApp = angular.module('jwApp', ['ionic'])
 		})
 
 		// Notes Routes
-		.state('notes', {
+		.state('notesList', {
 			url: '/notes',
 			templateUrl: basePath + 'booksTpl/notes.html',
+			controller: 'NotesController',
+			cache: false
+		})
+		.state('noteTitle', {
+			url: '/notes/:title',
+			templateUrl: basePath + 'booksTpl/edit.html',
 			controller: 'NotesController',
 			cache: false
 		});

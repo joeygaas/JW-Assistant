@@ -162,7 +162,7 @@ function($http, path, langFile, configFile, booksList){
 			var storedNotes = angular.fromJson(localStorage['notes']);
 			for(var i = 0; i < storedNotes.length; i++){
 				if(storedNotes[i]['title'] == title){
-					delete storedNotes[i];
+					storedNotes.splice(i,1);
 				}
 			}
 
@@ -177,19 +177,24 @@ function($http, path, langFile, configFile, booksList){
 		*@NotesCRUD method
 		*@name save
 		*
+		*@param notes {{ obj }} the object you want to add in the array
+		*
 		*@description save the notes into the localStorage
 		*/
 		save : function(notes){
 			var storedNotes = angular.fromJson(localStorage['notes']);
-			var msg;
 
 			if(storedNotes != undefined){
 				// check if the notes title is already exist
 				for(var i = 0; i < storedNotes.length; i++){
 					if(storedNotes[i]['title'] == notes.title){
 						// prompt the user and let him choose another title
-						var title = prompt('Title already exist. Please add a new one');
-						storedNotes[i]['title'] = title; // store the new title
+						do {
+							var title = prompt('Title Already exist. Please crete a new one');
+						}while(title == storedNotes[i]['title'])
+
+						storedNotes[i]['title'] = title;
+						
 					}
 				}
 				// add the new notes in the array
@@ -199,8 +204,8 @@ function($http, path, langFile, configFile, booksList){
 				storedNotes.push(notes); 
 			}
 
-			localStorage['notes'] = angular.toJson(storedNotes);
-			alert('Notes added successfuly'); // notify the user using alerbox 
+			localStorage['notes'] = angular.toJson(storedNotes); 
+			return true;
 		}
 	};
 }])

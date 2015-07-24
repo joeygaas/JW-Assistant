@@ -55,6 +55,11 @@ function($scope, $rootScope, $ionicModal, GetData, NotesCRUD){
 	    scope: $scope
 	 });
 
+	 //Cleanup the modal when we're done with it!
+	  $scope.$on('$destroy', function() {
+	    $scope.modal.remove();
+	  });
+
 
 	/*
 	*@TopController method
@@ -80,27 +85,19 @@ function($scope, $rootScope, $ionicModal, GetData, NotesCRUD){
 
 	/*
 	*@TopController method
-	*@name editNotes
-	*
-	*@description Show the edit form with content
-	*/
-	$scope.editNotes = function(title){
-		var notesData = NotesCRUD.get(title);
-		$scope.addNotesModal.show();
-		// TODO: find solution on how to add old value in edit form
-	},
-
-
-	/*
-	*@TopController method
 	*@name saveNotes
 	*
 	*@description Save the notes in the local storage
 	*/
 	$scope.saveNotes = function(notes){
 		NotesCRUD.save(notes); // save the notes data in the localStorage
+		$scope.addNotesModal.hide();
+
+		// Clear the value of the form
 		notes.title = "";
 		notes.content = "";
+
+		$rootScope.notesList = NotesCRUD.all();
 	};	
 
 	// Get the app language value in the localStorage.
@@ -241,10 +238,10 @@ function($scope, $rootScope, $stateParams, GetData, UtilityServices){
 *
 *@description contains the #/notes route behavior functions
 */
-.controller('NotesController', ['$scope', '$rootScope', 'NotesCRUD',
-function($scope, $rootScope, NotesCRUD){
+.controller('NotesController', ['$scope', '$rootScope', '$stateParams', '$location', 'NotesCRUD',
+function($scope, $rootScope, $stateParams, $location, NotesCRUD){
 	$rootScope.book = false;
-
+	
 	// Extract the needed data from the localStorage
 	var appLang = localStorage['appLang']; // Application current language
 	var config = angular.fromJson(localStorage['config']); // configuration files
@@ -260,7 +257,35 @@ function($scope, $rootScope, NotesCRUD){
 	if(!notes){
 		$scope.noNotes = "notes is empty"
 	}else {
-		$scope.notesList = notes;
+		$rootScope.notesList = notes;
 	}
 
+	
+	// Run only this function if the $stateParams is defined
+	if($stateParams.title != undefined){
+		var notesData = NotesCRUD.get($stateParams.title);
+		$scope.oldNotes = {};
+
+		if(notesData != false){
+			$scope.pageTitle = $stateParams.title;
+			$scope.oldNotes.title = notesData.title;
+			$scope.oldNotes.content = notesData.content;
+		}
+	}
+
+
+	/*
+	*@NotesController method
+ 	*@name removeNotes
+	*
+	*@description remove the notes from the storage
+	*/
+	$scope.removeNotes = function(title){
+		NotesCRUD.remove(title);
+
+		// Update the notesList
+		$rootScope.notesList = NotesCRUD.all();
+		$location.path('/notes');
+	}
+	
 }]);

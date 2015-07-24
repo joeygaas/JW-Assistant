@@ -5,7 +5,7 @@
 				<h2>{{ noNotes }}</h2>
 			</div>
 
-			<a href="" ng-repeat="note in notesList" ng-click="editNotes(note.title)" class="item">
+			<a ng-repeat="note in notesList" ng-href="#/notes/{{ note.title }}" class="item">
 				<h2>{{ note.title }}</h2>
 			</a>
 		</ion-list>

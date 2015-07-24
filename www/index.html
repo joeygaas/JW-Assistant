@@ -109,39 +109,32 @@
 	<!-- Add notes Modal box -->
 	<script id="add-notes.html" type="text/ng-template">
 		<div class="modal">
-			<!-- Modal header bar -->
-			<ion-header-bar class="bar-secondary">
-				<a href="#/notes" ng-click="closeAddNotes()" class="button button-clear button-positive">
-					Notes
-				</a>
-				<h1 class="title">Add Notes</h1>
+			<form ng-submit="saveNotes(notes)">
+				<div class="bar bar-header bar-energized">
+					<!-- Save button -->
+					<button type="submit" class="button button-icon">
+						<i class="icon ion-android-done"></i>
+					</button>
 
-				<!-- Cancel button -->
-				<button ng-click="closeAddNotes()" class="button button-clear button-positive">
-					Cancel
-				</button>
-			</ion-header-bar>
+					<!-- title -->
+					<h1 class="title">Add Notes</h1>
 
-			<!-- Modal content area -->
-			<ion-content>
-				<form ng-submit="saveNotes(notes)">
+					<!-- close button -->
+					<button ng-click="closeAddNotes()" class="button button-icon">
+						<i class="icon ion-android-close"></i>
+					</button>
+				</div>
+				<div class="content">
 					<div class="list">
 						<label class="item item-input">
-							<input ng-model="notes.title" type="text" placeholder="Enter title here" required />
+							<input type="text" ng-model="notes.title" placeholder="Enter notes title here..." required>
 						</label>
-
 						<label class="item item-input">
 							<textarea ng-model="notes.content" placeholder="Enter Your notes here..." required></textarea>
 						</label>
-						
 					</div>
-					<div class="padding">
-						<button type="submit" class="button button-block button-positive">
-							Save new Note
-						</button>
-					</div>
-				</form>
-			</ion-content>
+				</div>
+			</form>
 		</div>
 	</script>
 </body>
