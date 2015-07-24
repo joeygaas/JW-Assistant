@@ -1,4 +1,6 @@
 # JW-Assistant
+### Built with Angularjs and Ionic Framework
+
 ## Home and Library
 ![Alt text](https://cloud.githubusercontent.com/assets/9475290/8866362/1af6e822-31ee-11e5-8d83-82127067738b.png)
 ## Books and Add notes form
