@@ -13,7 +13,7 @@
 *
 *@description jwApp main module
 */
-var jwApp = angular.module('jwApp', ['ionic'])
+var jwApp = angular.module('jwApp', ['ionic', 'ngTouch'])
 
 /*
 *@jwApp config
