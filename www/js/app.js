@@ -20,7 +20,8 @@ var jwApp = angular.module('jwApp', ['ionic', 'ngTouch'])
 *
 *@description app main configuration
 */
-.config(['$stateProvider', function($stateProvider){
+.config(['$stateProvider', '$urlRouterProvider',
+function($stateProvider, $urlRouterProvider){
 	/*
 	*@config routes
 	*
@@ -65,4 +66,25 @@ var jwApp = angular.module('jwApp', ['ionic', 'ngTouch'])
 			controller: 'NotesController',
 			cache: false
 		});
+		// Redirect the page to index if 
+		// the route is invalid
+		$urlRouterProvider.otherwise('/');
+}])
+
+
+/*
+*@jwApp run
+*
+*@description runtime function
+*/
+.run(['$state', '$rootScope', '$ionicLoading', function($state, $rootScope, $ionicLoading){
+	$rootScope.$on('$stateChangeStart', function(){
+		$ionicLoading.show({
+			template : 'Loading...'
+		});
+	});
+
+	$rootScope.$on('$stateChangeSuccess', function(){
+		$ionicLoading.hide();
+	});
 }]);

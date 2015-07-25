@@ -57,7 +57,7 @@ function($scope, $rootScope, $ionicModal, GetData, NotesCRUD){
 
 	 //Cleanup the modal when we're done with it!
 	  $scope.$on('$destroy', function() {
-	    $scope.modal.remove();
+	    $scope.addNotesModal.remove();
 	  });
 
 
@@ -99,6 +99,41 @@ function($scope, $rootScope, $ionicModal, GetData, NotesCRUD){
 
 		$rootScope.notesList = NotesCRUD.all();
 	};	
+
+
+	// Create search modal
+	$ionicModal.fromTemplateUrl('search-modal.html', function(modal) {
+	    $scope.searchModal = modal;
+	}, {
+	    scope: $scope
+	});
+
+	//Cleanup the modal when we're done with it!
+	$scope.$on('$destroy', function() {
+	    $scope.searchModal.remove();
+	});
+
+
+	/*
+	*@TopController method
+	*@name search
+	*
+	*@description show the search modal
+	*/
+	$scope.search = function(){
+		$scope.searchModal.show();
+	}
+
+
+	/*
+	*@TopController method
+	*@name closeSearch
+	*
+	*@description close the search modal
+	*/
+	$scope.closeSearch = function(){
+		$scope.searchModal.hide();
+	}
 
 	// Get the app language value in the localStorage.
 	// If the value if undifined set the default value to tl( tagalog).

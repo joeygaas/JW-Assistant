@@ -53,7 +53,7 @@
 				<!-- Secondary Buttons -->
 				<ion-nav-buttons side="secondary">
 					<!-- Search button -->
-					<button class="button">
+					<button ng-click="search()" class="button">
 						<i class="icon ion-ios-search"></i>
 					</button>
 
@@ -136,6 +136,36 @@
 					</div>
 				</div>
 			</form>
+		</div>
+	</script>
+
+	<!-- Search modal -->
+	<script id="search-modal.html" type="text/ng-template">
+		<div class="modal">
+			<div class="bar bar-header bar-energized">
+				<h1 class="title">Search</h1>
+				<!-- close button -->
+				<button ng-click="closeSearch()" class="button button-icon">
+					<i class="icon ion-android-close"></i>
+				</button>
+			</div>
+
+			<div class="content">
+				<form ng-submit="search(key)">
+					<div class="list">
+						<label class="item item-input">
+							<i class="icon ion-search placeholder-icon"></i>
+							<input type="search" placeholder="Search" reaquired />
+						</label>
+					</div>
+				</form>
+
+				<div ng-repeat="result in results" class="card">
+					<div class="item item-text-wrap">
+						
+					</div>
+				</div>
+			</div>
 		</div>
 	</script>
 </body>
