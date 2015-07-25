@@ -1,10 +1,6 @@
 <ion-view view-title="{{ pageTitle }}">
 	<ion-content>
 		<ion-list>
-			<div ng-if="noNotes" class="item ">
-				<h2>{{ noNotes }}</h2>
-			</div>
-
 			<a ng-repeat="note in notesList" ng-href="#/notes/{{ note.title }}" class="item">
 				<h2>{{ note.title }}</h2>
 			</a>

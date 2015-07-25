@@ -289,9 +289,7 @@ function($scope, $rootScope, $stateParams, $location, NotesCRUD){
 	$rootScope.menus = config.menu;  // ion-side-menu left items
 
 	var notes = NotesCRUD.all(); // Get all the notes
-	if(!notes){
-		$scope.noNotes = "notes is empty"
-	}else {
+	if(notes){
 		$rootScope.notesList = notes;
 	}
 
