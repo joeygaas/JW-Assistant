@@ -280,12 +280,36 @@ function($scope, $rootScope, $stateParams, $location, NotesCRUD){
 	*
 	*@description remove the notes from the storage
 	*/
-	$scope.removeNotes = function(title){
-		NotesCRUD.remove(title);
+	$scope.deleteNotes = function(title){
+		var remove = NotesCRUD.remove(title);
+		if(remove){
+			$location.path('/notes');
+		}else {
+			alert("Title is empty");
+		}
+	}
 
-		// Update the notesList
-		$rootScope.notesList = NotesCRUD.all();
-		$location.path('/notes');
+
+	/*
+	*@NotesController method
+ 	*@name editNotes
+	*
+	*@description remove the notes from the storage
+	*/
+	$scope.editNotes = function(notes){
+		// Remove the stored notes first berfore storing a new one
+		// to avoid duplicated notes
+		var remove = NotesCRUD.remove(notes.title);
+		if(remove){
+			var save = NotesCRUD.save(notes);
+			if(save){
+				$location.path('/notes');
+			}else {
+				alert("Fields are required..");
+			}
+		}else {
+			alert("Fields are required..");
+		}
 	}
 	
 }]);

@@ -1,30 +1,30 @@
 <ion-view view-title="{{ pageTitle}}">
 <div>
-	<form ng-submit="editNotes(oldNotes)">
-		<ion-content>
-			<div class="list">
-				<label class="item item-input">
-					<input ng-model="oldNotes.title" type="text" required />
-				</label>
-				<label class="item item-input">
-					<textarea ng-model="oldNotes.content" required ></textarea>
-				</label>
-			</div>
-		</ion-content>
-		<div class="tabs tabs-stable">
-			<!-- Delete button -->
-			<button ng-click="removeNotes(oldNotes.title)" class="button button-icon tab-item">
-				Delete
-			</button>
-			<!-- Save Button -->
-			<button type="submit" class="button button-icon tab-item">
-				Save
-			</button>
-			<!-- Discard button -->
-			<a href="#/notes" class="button button-icon tab-item">
-				Discard
-			</a>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<input ng-model="oldNotes.title" type="text" required />
+			</label>
+			<label class="item item-input">
+				<textarea ng-model="oldNotes.content" required ></textarea>
+			</label>
 		</div>
-	</form>
+	</ion-content>
+
+	<!-- Footer buttons -->
+	<div class="tabs tabs-stable">
+		<!-- Delete button -->
+		<button ng-click="deleteNotes(oldNotes.title)" class="button button-icon tab-item">
+			Delete
+		</button>
+		<!-- Save Button -->
+		<button ng-click="editNotes(oldNotes)" class="button button-icon tab-item">
+			Save
+		</button>
+		<!-- Discard button -->
+		<a href="#/notes" class="button button-icon tab-item">
+			Discard
+		</a>
+	</div>
 </div>
 </ion-view>

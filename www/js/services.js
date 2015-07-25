@@ -144,7 +144,7 @@ function($http, path, langFile, configFile, booksList){
 			var storedNotes = angular.fromJson(localStorage['notes']);
 			
 			for(var i = 0; i < storedNotes.length; i++){
-				if(storedNotes[i]['title'] = title){
+				if(storedNotes[i]['title'] == title){
 					return storedNotes[i];
 				}
 			}
@@ -159,6 +159,10 @@ function($http, path, langFile, configFile, booksList){
 		*@description remove the selected notes
 		*/
 		remove : function(title){
+			if(title == undefined){
+				return false;
+			}
+
 			var storedNotes = angular.fromJson(localStorage['notes']);
 			for(var i = 0; i < storedNotes.length; i++){
 				if(storedNotes[i]['title'] == title){
@@ -166,7 +170,7 @@ function($http, path, langFile, configFile, booksList){
 				}
 			}
 
-
+			
 			localStorage['notes'] = angular.toJson(storedNotes);
 
 			return true;
@@ -182,6 +186,10 @@ function($http, path, langFile, configFile, booksList){
 		*@description save the notes into the localStorage
 		*/
 		save : function(notes){
+			if(notes.title == undefined || notes.content == undefined){
+				return false;
+			}
+
 			var storedNotes = angular.fromJson(localStorage['notes']);
 
 			if(storedNotes != undefined){
@@ -203,7 +211,7 @@ function($http, path, langFile, configFile, booksList){
 				storedNotes = [];
 				storedNotes.push(notes); 
 			}
-
+			console.log(storedNotes);
 			localStorage['notes'] = angular.toJson(storedNotes); 
 			return true;
 		}
