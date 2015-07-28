@@ -53,7 +53,7 @@ angular.module('JWApp.services', [])
 *
 *@description Get all the Selected Book assts
 */
-.factory('DailyTextSvc', function($http, assetsPath){
+.factory('DailyTextSvc', function($http, $ionicLoading, assetsPath){
 	/*
 	*@name toDate
 	*
@@ -102,9 +102,6 @@ angular.module('JWApp.services', [])
 				case 'Disyembre':
 					localDate = 12 + '-' +title[2];
 					break;
-				default:
-					console.log('Not match');
-					break;
 			}
 		}
 
@@ -117,7 +114,7 @@ angular.module('JWApp.services', [])
 		*
 		*@description Get the daily text files and store it in webSQL
 		*/
-		getContent : function(path, lang){
+		getContent : function(path, lang, callback){
 			$http.get(assetsPath + path + '/content.opf').success(function(data){
 				var xmlDoc = $.parseXML(data);
 				var xml = $(xmlDoc);
@@ -151,10 +148,13 @@ angular.module('JWApp.services', [])
 								tx.executeSql(query, [newData.localDate, newData.content, newData.verses]);
 							});
 						}
+						// pass value to callback
+						callback(true);
 					}).error(function(error){	
 						alert(template + ' is missing');
 					});
 				}
+
 			}).error(function(error){
 				alert('Book toc.ncx file is missing');
 			});

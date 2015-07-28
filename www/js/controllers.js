@@ -9,7 +9,7 @@
 
 angular.module('JWApp.controllers', [])
 
-.controller('AppCtrl', function($scope, $rootScope, $ionicModal, AssetsSvc, NotesCRUD) {
+.controller('AppCtrl', function($scope, $rootScope, $ionicModal, $ionicLoading, AssetsSvc, NotesCRUD, DailyTextSvc) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -17,6 +17,12 @@ angular.module('JWApp.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  
+  // Show the loading bar
+  $ionicLoading.show({ 
+    delay: 0,
+    template: "Loading..."
+  });
 
   // Check if the application language is set
   // if not set reset to default language
@@ -73,10 +79,13 @@ angular.module('JWApp.controllers', [])
     $scope.notesModal.hide();
   }
 
-
   // Load all the needed files in the locaStorage
   AssetsSvc.getLang();
   AssetsSvc.getManifest(lang);
+  DailyTextSvc.getContent(lang + '/dailytxt', lang, function(data){
+    $ionicLoading.hide();
+  });
+
 })
 
 
@@ -90,7 +99,7 @@ angular.module('JWApp.controllers', [])
     var manifest = angular.fromJson(localStorage['manifest']); // manifest
     $rootScope.leftMenuNavs = manifest.leftNav; // left menu navs
 
-    DailyTextSvc.getContent(appLang + '/dailytxt', appLang);
+    //DailyTextSvc.getContent(appLang + '/dailytxt', appLang);
 })
 
 
