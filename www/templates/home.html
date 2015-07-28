@@ -1,23 +1,5 @@
 <ion-view view-title="JW Assistant">
-	<ion-content>
-		<div class="row banner">
-			<div class="col">
-				<h2>{{ YearlyTxt[0].header }}</h2>
-				<p>{{ YearlyTxt[1].text}}​<small>{{ YearlyTxt[2].verse }}</small>.</p>
-			</div>
-		</div>
-
-		<div class="row arrow-box">
-			<p>{{ arrowBox }}</p>
-		</div>
-
-		<article class="row ">
-	      <div class="col col-center">
-	        <a ng-repeat="book in books" class="item item-thumbnail-left widget" href="#/book/{{ book.abr }}/{{ book.description }}">
-	          <img ng-src="{{ book.img }}" />
-	          <h2>{{ book.description }}</h2>
-	        </a>
-	      </div><!-- /.col -->
-	    </article><!-- /.row -->
-	</ion-content>
+  <ion-content>
+  		<iframe src="{{ template }}"></iframe>
+  </ion-content>
 </ion-view>

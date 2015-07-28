@@ -1,0 +1,19 @@
+{
+	"leftNav" : [
+		{"label" : "Home", "path" : "/home" },
+		{"label" : "Mga Nota", "path" : "/noteslist" },
+		{"label" : "Mga Aklat", "path" : "/library" }
+	],
+
+	"home" : {"title" : "Jw Assistant"},
+	"notes" : {"title" : "Mga Nota"},
+	"library" : {"title" : "Mga Aklat"},
+
+	"bookslist": [
+		{"desc" : "Bagong Sanlibutan Salin ng Banal na Kasulatan", "abr" : "bi12_TG", "img" : "tl/bi12_TG/OEBPS/images/1001060547_TG_cvr.jpg"},
+		{"desc" : "ANU BA Talaga  ANG ITINUTURO NG BIBLIYA?", "abr" : "bh_TG", "img" : "tl/bh_TG/OEBPS/images/1102005169_TG_cvr.jpg"},
+		{"desc" : "MAGANDANG BALITA MULA SA DIYOS", "abr" : "fg_TG", "img" : "tl/fg_TG/OEBPS/images/1102012181_TG_cvr.jpg"},
+		{"desc" : "Intruduksyon sa Salita ng Diyos", "abr" : "igw_TG", "img" : "tl/igw_TG/OEBPS/images/1102013691_TG_cvr.jpg"},
+		{"desc" : "Tulong sa Pag-aaral ng Salita ng Diyos", "abr" : "sgd_TG", "img" : "tl/sgd_TG/OEBPS/images/1102013690_TG_cvr.jpg"}
+	]
+}

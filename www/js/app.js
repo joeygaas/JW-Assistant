@@ -1,90 +1,115 @@
 /*
-*	File	: app.js
-*	Date	: July 17, 2015
-*	By		: Joey ga-as
+  File    : app.js
+  Created : July 26, 2015
+  by      : Joey Ga-as
 */
+
 
 'use strict';
 
+var db = null; // holds the webSQL database object
 
 /*
-*@angular module
-*@name jwApp
+*@name JWApp
 *
-*@description jwApp main module
+*@description main app module
 */
-var jwApp = angular.module('jwApp', ['ionic', 'ngTouch'])
-
-/*
-*@jwApp config
-*
-*@description app main configuration
-*/
-.config(['$stateProvider', '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider){
-	/*
-	*@config routes
-	*
-	*@description app routes
-	*/
-	var basePath = '/templates/'; // tempalte base path
-	$stateProvider
-		// Welcome screen route
-		.state('home', {
-			url: '/',
-			templateUrl: basePath + 'home.html',
-			controller: 'HomeController',
-			cache: false
-		})
-
-		// 
-		.state('library', {
-			url: '/library',
-			templateUrl: basePath + 'booksTpl/library.html',
-			controller: 'LibraryController',
-			cache: false
-		})
-
-		// Book Routes
-		.state('books', {
-			url: '/book/:book/:title',
-			templateUrl: basePath + 'booksTpl/content.html',
-			controller: 'BookController',
-			cache: false
-		})
-
-		// Notes Routes
-		.state('notesList', {
-			url: '/notes',
-			templateUrl: basePath + 'booksTpl/notes.html',
-			controller: 'NotesController',
-			cache: false
-		})
-		.state('noteTitle', {
-			url: '/notes/:title',
-			templateUrl: basePath + 'booksTpl/edit.html',
-			controller: 'NotesController',
-			cache: false
-		});
-		// Redirect the page to index if 
-		// the route is invalid
-		$urlRouterProvider.otherwise('/');
-}])
+angular.module('JWApp', ['ionic', 'ngCordova', 'JWApp.controllers', 'JWApp.services'])
 
 
 /*
-*@jwApp run
+*@name run
 *
-*@description runtime function
+*@description app runtime function
 */
-.run(['$state', '$rootScope', '$ionicLoading', function($state, $rootScope, $ionicLoading){
-	$rootScope.$on('$stateChangeStart', function(){
-		$ionicLoading.show({
-			template : 'Loading...'
-		});
-	});
+.run(function($ionicPlatform, $cordovaSQLite) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
-	$rootScope.$on('$stateChangeSuccess', function(){
-		$ionicLoading.hide();
-	});
-}]);
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+
+
+  // Open app database that will be used through out the 
+  // application 
+  db = openDatabase('JW.db', '1.0', 'JW Assistant DB', 2 * 1024 * 1024);
+
+  // Create application tables if not exists
+  db.transaction(function(tx){
+     tx.executeSql('CREATE TABLE IF NOT EXISTS notes(title unique, content)');
+     tx.executeSql('CREATE TABLE IF NOT EXISTS dailytext(localDate unique, content, verses)');
+     //tx.executeSql('DROP TABLE dailytext');
+  });
+
+})
+
+
+/*
+*@name config
+*
+*@description app config function
+*/
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  })
+
+  // Home
+  .state('app.home', {
+    url: '/home',
+    views: {
+       'menuContent': {
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
+        }
+      }
+  })
+
+  // library
+  .state('app.library', {
+    url: '/library',
+    views: {
+      'menuContent' : {
+        templateUrl: 'templates/library.html',
+        controller: 'LibCtrl'
+      }
+    }
+  })
+  // library book
+  .state('app.book', {
+    url: '/book/:title',
+    views: {
+      'menuContent' : {
+        templateUrl: 'templates/book.single.html',
+        controller: 'BookCtrl'
+      }
+    }
+  })
+
+  // notes
+  .state('app.noteslist', {
+    url: '/noteslist',
+    views: {
+      'menuContent' : {
+        templateUrl: 'templates/noteslist.html',
+        controller: 'NotesCtrl'
+      }
+    }
+  });
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/home');
+});

@@ -1,0 +1,9 @@
+<ion-view view-title="{{ pageTitle }}">
+	<ion-content>
+		<ion-list>
+			<a class="item" ng-repeat="note in noteslist" ng-click="getNotes(note.id)">
+				{{ note.title }}
+			</a>
+		</ion-list>
+	</ion-content>
+</ion-view>

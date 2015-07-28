@@ -1,258 +1,309 @@
 /*
-  File  : controllers.js
-  Date  : July 17, 2015
-  By    : Joey Ga-as
+  File    : services.js
+  Created : July 26, 2015
+  by      : Joey Ga-as
 */
 
 'use strict';
 
-angular.module('jwApp')
 
-
-/*
-*@jwApp constants
-*
-*@description path of the file in the storage
-*/
-.constant('path', '/data/') // base path
-.constant('langFile', 'lang.json') // language file 
-.constant('configFile', '/config.json') // menu file
-.constant('booksList', '/booksList.json') // books list
-
+angular.module('JWApp.services', [])
+.constant('assetsPath', 'assets/') // Assets File base path
 
 /*
-*@jwApp service
-*@name GetData
+*@name AssetsSvc
 *
-*@description Get data from the file storage
+*@description Get all the app assets and load it into the localStorage
 */
-.factory('GetData', ['$http', 'path', 'langFile', 'configFile', 'booksList',
-function($http, path, langFile, configFile, booksList){
+.factory('AssetsSvc', function($http, assetsPath){
 	return {
 		/*
-		*@GetData function
 		*@name getLang
 		*
-		*@return promise object
-		*
-		*@description Get the language data
+		*@description get the lang.json file and store it in the locaStorage
 		*/
 		getLang : function(){
-			$http.get(path + langFile).success(function(response){
-				localStorage['lang'] = angular.toJson(response);
+			$http.get(assetsPath + 'langs.jw').success(function(data){
+				localStorage['langs'] = angular.toJson(data);
+			}).error(function(error){
+				alert('Cannot Find lang.jw file');
 			});
 		},
 
 
 		/*
-		*@GetData function
-		*@name getMenu
+		*@name getMenus
 		*
-		*@param lang {{ string }} file language
-		*@return promise object
-		*
-		*@description Get the config data
+		*@description get the menus.json file and store it in the locaStorage
 		*/
-		getConfig : function(lang){
-			$http.get(path + lang + configFile).success(function(response){
-				localStorage['config'] = angular.toJson(response);
+		getManifest : function(lang){
+			$http.get(assetsPath + lang + '/manifest.jw').success(function(data){
+				localStorage['manifest'] = angular.toJson(data);	
+			}).error(function(error){
+				alert('Cannot Find menus.json file');
 			});
 		},
-
-
-		/*
-		*@GetData function
-		*@name getMenu
-		*
-		*@param lang {{ string }} file language
-		*@return promise object
-		*
-		*@description Get the books list data
-		*/
-		getBooksList : function(lang){
-			$http.get(path + lang + booksList).success(function(response){
-				localStorage['booksList'] = angular.toJson(response.books);
-			});
-		},
-
-
-		/*
-		*@GetData function
-		*@name getBookToc
-		*
-		*@param lang {{ string }} file language
-		*@param title {{ string }} file name
-		*@param callback {{ function }} callback function
-		*@return xml data
-		*
-		*@description get the books table of contents xml data
-		*/
-		getBookTocXML : function(lang, title, callback){
-			var request = new XMLHttpRequest();
-			request.open('GET', path + '/' + lang + '/' + title + '/OEBPS/toc.ncx');
-			
-			request.onreadystatechange = function(){
-				// if the request is complete and was successful
-				if(request.readyState === 4 && request.status === 200){
-					// Get the type of the response
-					var type = request.getResponseHeader('Content-Type');
-
-					// Check type so we don't get HTML documents in the future.
-					if(type == 'application/x-dtbncx+xml; charset=utf-8'){
-						callback(request.responseXML); // assign xml data to the callback
-					}
-				}
-			};
-
-			request.send(null);
-		}
 	};
-}])
+})
+
 
 
 /*
-*@jwApp service
+*@name BookAssetsSvc
+*
+*@description Get all the Selected Book assts
+*/
+.factory('DailyTextSvc', function($http, assetsPath){
+	/*
+	*@name toDate
+	*
+	*@description convert daily text title to date
+	*/
+	var toDate = function(data, lang){
+		var localDate = null;
+		var title = data.split(' ');
+
+		if(lang == 'tl'){
+
+			switch(title[1]){
+				case 'Enero':
+					localDate = 1 + '-' +title[2];
+					break;
+				case 'Pebrero':
+					localDate = 2 + '-' +title[2];
+					break;
+			 	case 'Marso':
+					localDate = 3 + '-' +title[2];
+					break;
+				case 'Abril':
+					localDate = 4 + '-' +title[2];
+					break;
+				case 'Mayo':
+					localDate = 5 + '-' +title[2];
+					break;
+				case 'Hunyo':
+					localDate = 6 + '-' +title[2];
+					break;
+				case 'Hulyo':
+					localDate = 7 + '-' +title[2];
+					break;
+				case 'Agosto':
+					localDate = 8 + '-' +title[2];
+					break;
+				case 'Setyembre':
+					localDate = 9 + '-' +title[2];
+					break;
+				case 'Oktubre':
+					localDate = 10 + '-' +title[2];
+					break;
+				case 'Nobyembre':
+					localDate = 11 + '-' +title[2];
+					break;
+				case 'Disyembre':
+					localDate = 12 + '-' +title[2];
+					break;
+				default:
+					console.log('Not match');
+					break;
+			}
+		}
+
+		return localDate;
+	};
+
+	return {
+		/*
+		*@name getContent
+		*
+		*@description Get the daily text files and store it in webSQL
+		*/
+		getContent : function(path, lang){
+			$http.get(assetsPath + path + '/content.opf').success(function(data){
+				var xmlDoc = $.parseXML(data);
+				var xml = $(xmlDoc);
+
+				var pages = xml.find('item');
+				
+				var query = 'INSERT INTO dailytext(localDate, content, verses) VALUES(?, ?, ?)';
+
+				// Get the html file and parse it as xml 
+				// then get the needed value and store it in the dailytext table
+				for(var i = 0; i < pages.length; i++){
+					var template = $(pages[i]).attr('href');
+				
+					$http.get(assetsPath + path + '/' + template)
+					.success(function(data){
+						var docXml = $.parseXML(data);
+						var doc = $(docXml);
+
+						var title = doc.find('title')[0].innerHTML;
+						
+						var newData = {}; // Holds the new data
+						// Convert  title to data format
+						newData.localDate = toDate(title, lang);
+
+						if(newData.localDate != undefined){
+							newData.content = doc.find('.pGroup')[0].innerHTML;
+							newData.verses = doc.find('.groupExt')[0].innerHTML;
+
+							// Save data into webSQL
+							db.transaction(function(tx){
+								tx.executeSql(query, [newData.localDate, newData.content, newData.verses]);
+							});
+						}
+					}).error(function(error){	
+						alert(template + ' is missing');
+					});
+				}
+			}).error(function(error){
+				alert('Book toc.ncx file is missing');
+			});
+		}
+	};
+})
+
+
+/*
 *@name NotesCRUD
 *
-*@description handles notes CRUD functions
+*@description Notes crud service
 */
-.factory('NotesCRUD', [function(){
+.factory('NotesCRUD', function(){
 	return {
 		/*
-		*@NotesCRUD method
 		*@name all
 		*
-		*@description get all the notes
+		*@param callback {{ function }} callback function
+		*@return array
+		*
+		*@description get all the data
 		*/
-		all : function(){
-			var storedNotes = angular.fromJson(localStorage['notes']);
-			if(storedNotes == undefined){
-				return false;
-			}
+		all : function(callback){
+			var newData = []; // holds the new data
+			var query = 'SELECT rowid, title, content FROM notes';
 
-			return storedNotes;
+			db.transaction(function(tx){
+				tx.executeSql(query, [], function(tx, results){
+
+					var rows = results.rows;
+
+					if(rows.length != 0){
+						for(var i = 0; i < rows.length; i++){
+							var tmp = {};
+							tmp.id = rows[i]['rowid'];
+							tmp.title = rows[i]['title'];
+							tmp.content = rows[i]['content'];
+
+							newData.push(tmp);
+						}
+
+						callback(newData); // pass the data to the callback function
+					}else {
+						newData = false
+						callback(newData);
+					}
+
+				});
+			}, function(error){
+				alert(error.message);
+			});
 		},
 
 
 		/*
-		*@NotesCRUD method
+		*@name create
+		*
+		*@description create new data
+		*/
+		create : function(notes) {
+			var query = 'INSERT INTO notes(title, content) VALUES(?, ?)';
+			db.transaction(function(tx){
+				tx.executeSql(query, [notes.title, notes.content]);
+			}, function(error){
+				switch(error.code){
+					case 6 : 
+						alert('Title already exist please choose a new title');
+						break;
+
+					default :
+						alert(error.message);
+						break;
+				}
+			});
+		},
+
+
+		/*
 		*@name get
 		*
-		*@description get a selected notes in the array
-		*/
-		get : function(title){
-			var storedNotes = angular.fromJson(localStorage['notes']);
-			
-			for(var i = 0; i < storedNotes.length; i++){
-				if(storedNotes[i]['title'] == title){
-					return storedNotes[i];
-				}
-			}
-			return false;
-		},
-
-
-		/*
-		*@NotesCRUD method
-		*@name remove
+		*@param id {{ int }} notes id
+		*@param callback {{ function }} callback function
+		*@return object
 		*
-		*@description remove the selected notes
+		*@description get selected data
 		*/
-		remove : function(title){
-			if(title == undefined){
-				return false;
-			}
+		get : function(id, callback) {
+			var data = {}; // holds the retrieve data
+			var query = 'SELECT rowid, title, content FROM notes WHERE rowid=?';
 
-			var storedNotes = angular.fromJson(localStorage['notes']);
-			for(var i = 0; i < storedNotes.length; i++){
-				if(storedNotes[i]['title'] == title){
-					storedNotes.splice(i,1);
-				}
-			}
+			db.transaction(function(tx){
+				tx.executeSql(query, [id], function(tx, results){
 
-			
-			localStorage['notes'] = angular.toJson(storedNotes);
+					var row = results.rows;
 
-			return true;
-		},
+					if(row.length != 0){
+						data.id = row[0].rowid;
+						data.title = row[0].title;
+						data.content = row[0].content;
 
-
-		/*
-		*@NotesCRUD method
-		*@name save
-		*
-		*@param notes {{ obj }} the object you want to add in the array
-		*
-		*@description save the notes into the localStorage
-		*/
-		save : function(notes){
-			if(notes.title == undefined || notes.content == undefined){
-				return false;
-			}
-
-			var storedNotes = angular.fromJson(localStorage['notes']);
-
-			if(storedNotes != undefined){
-				// check if the notes title is already exist
-				for(var i = 0; i < storedNotes.length; i++){
-					if(storedNotes[i]['title'] == notes.title){
-						// prompt the user and let him choose another title
-						do {
-							var title = prompt('Title Already exist. Please crete a new one');
-						}while(title == storedNotes[i]['title'])
-
-						storedNotes[i]['title'] = title;
-						
+						callback(data); // pass the retrieve data into the callback function
+					}else {
+						alert("The selected data don't exist in the database!");
 					}
+
+				});
+			}, function(error){
+				alert(error.message);
+			});
+		},
+
+
+		/*
+		*@name update
+		*
+		*@description update selected data
+		*/
+		update : function(data) {
+			var query = 'UPDATE notes SET title=?, content=? WHERE rowid=?';
+			db.transaction(function(tx){
+				tx.executeSql(query, [data.title, data.content, data.id]);
+			}, function(error){
+				switch(error.code){
+					case 6 : 
+						alert('Title already exist please choose a new title');
+						break;
+
+					default :
+						alert(error.message);
+						break;
 				}
-				// add the new notes in the array
-				storedNotes.push(notes);
-			}else {
-				storedNotes = [];
-				storedNotes.push(notes); 
-			}
-			console.log(storedNotes);
-			localStorage['notes'] = angular.toJson(storedNotes); 
-			return true;
+			});
+		},
+
+
+		/*
+		*@name delete
+		*
+		*@description delete selected data
+		*/
+		delete : function(id) {
+			var query = 'DELETE FROM notes WHERE rowid=?';
+			db.transaction(function(tx){
+				tx.executeSql(query, [id]);
+			}, function(error){
+				alert(error.message);
+			});
 		}
 	};
-}])
+});	
 
-
-/*
-*@jwApp service
-*@name UtilityServices
-*
-*@description Application utitlity services
-*/
-.factory('UtilityServices', [function(){
-	return {
-		/*
-		*@UtilityService function
-		*@name bookNav
-		*
-		*@description create books navigation from xml data
-		*/
-		bookNavToJson : function(xmlData, path){
-			var navMap = xmlData.getElementsByTagName('navMap'); // navigation list container tag
-			var newData = []; // new data
-
-			var navLabel = navMap[0].getElementsByTagName('navLabel'); // nav label array
-			var navContent = navMap[0].getElementsByTagName('content'); // nav content array (contains the src attribute)
-
-			for(var i = 0; i < navLabel.length; i++){
-				var label = navLabel[i].textContent; // navLabel textContent
-				var src = navContent[i].attributes[0].textContent; // navContent src attr textContent
-				
-				var json  = {}; // stores the json objects
-				json.title = label; // the the title or the label of the nav 
-				json.path = path + '/OEBPS/' +src;	// the path of the  nav
-
-				newData.push(json);
-				
-			}
-
-			return newData;
-		}
-	}
-}]);

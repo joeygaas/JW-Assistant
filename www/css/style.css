@@ -1,0 +1,28 @@
+/*
+  File    : style.css
+  Created : July 26, 2015
+  by      : Joey Ga-as
+*/
+
+.content {
+	margin-top: 40px;
+}
+
+.banner {
+	height: 30vh;
+	background: black;
+}
+
+
+.modal textarea {
+	height: 80vh;
+	font-weight: bold;
+}
+.modal input[type=text]{
+	font-weight: bold;
+}
+
+iframe {
+	width: 100%;
+	height: 100vh;
+}

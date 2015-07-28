@@ -1,348 +1,206 @@
 /*
-  File  : controllers.js
-  Date  : July 17, 2015
-  By    : Joey Ga-as
+  File    : controllers.js
+  Created : July 26, 2015
+  by      : Joey Ga-as
 */
 
 'use strict';
 
-angular.module('jwApp')
 
-/*
-*@jwApp controller
-*@name TopController
-*
-*@description contains the app uitility functions
-*/
-.controller('TopController', ['$scope', '$rootScope', '$ionicModal', 'GetData', 'NotesCRUD',
-function($scope, $rootScope, $ionicModal, GetData, NotesCRUD){
-	/*
-	*@TopController method
-	*@name setLang
-	*
-	*@description set the application language
-	*/
-	$scope.setLang = function(lang){
-		localStorage['appLang'] = lang;
-		// Reload the page
-		location.reload();
-	};
+angular.module('JWApp.controllers', [])
 
+.controller('AppCtrl', function($scope, $rootScope, $ionicModal, AssetsSvc, NotesCRUD) {
 
-	/*
-	*@TopController method
-	*@name loadLang
-	*
-	*@description Store all the needed assets in localStorage, indexDB or webSQL
-	*/
-	$scope.loadAssets = function(){
-		// load all the language file
-		GetData.getLang();
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on app start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter event:
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});
 
-		// Save the config file in the local storage
-		GetData.getConfig($scope.appLang);
+  // Check if the application language is set
+  // if not set reset to default language
+  var lang = localStorage['appLang'];
+  if(lang == undefined){
+    localStorage['appLang'] = 'tl';
+    lang = localStorage['appLang'];
+  }
 
-		// load the books lists file
-		GetData.getBooksList($scope.appLang);
-		// load all the books content file
-	};
+  // Create the notes modal box
+  $ionicModal.fromTemplateUrl('add-notes.html', function(modal){
+    $scope.notesModal = modal;
+  }, {
+    scope : $scope,
+    animation: 'slide-in-up',
+    focusFirstInput: true
+  });
 
 
-	// Create add notes modal
-	 $ionicModal.fromTemplateUrl('add-notes.html', function(modal) {
-	    $scope.addNotesModal = modal;
-	 }, {
-	    scope: $scope
-	 });
-
-	 //Cleanup the modal when we're done with it!
-	  $scope.$on('$destroy', function() {
-	    $scope.addNotesModal.remove();
-	  });
+  /*
+  *@name showNotesModal
+  *
+  *@description show notes modal
+  */
+  $scope.showNotesModal = function(){
+    $scope.notesModal.show();
+  }
 
 
-	/*
-	*@TopController method
-	*@name addNotes
-	*
-	*@description Show the add notes modal form
-	*/
-	$scope.addNotes = function(){
-		$scope.addNotesModal.show();
-	};
+  /*
+  *@name hideNotesModal
+  *
+  *@description hide notes modal
+  */
+  $scope.hideNotesModal = function(){
+    $scope.notesModal.hide();
+  }
+
+  /*
+  *@name addNotes
+  *
+  *@description add the notes data
+  */
+  $scope.addNotes = function(data){
+    NotesCRUD.create(data); // Create the data
+
+    // Update the noteslist 
+    NotesCRUD.all(function(response){
+      $rootScope.noteslist = response;
+      data.title = "";
+      data.content = "";
+    });
+
+    $scope.notesModal.hide();
+  }
 
 
-	/*
-	*@TopController method
-	*@name cancelNotes
-	*
-	*@description Hide the add notes modal form
-	*/
-	$scope.closeAddNotes = function(){
-		$scope.addNotesModal.hide();
-	};
-
-
-	/*
-	*@TopController method
-	*@name saveNotes
-	*
-	*@description Save the notes in the local storage
-	*/
-	$scope.saveNotes = function(notes){
-		NotesCRUD.save(notes); // save the notes data in the localStorage
-		$scope.addNotesModal.hide();
-
-		// Clear the value of the form
-		notes.title = "";
-		notes.content = "";
-
-		$rootScope.notesList = NotesCRUD.all();
-	};	
-
-
-	// Create search modal
-	$ionicModal.fromTemplateUrl('search-modal.html', function(modal) {
-	    $scope.searchModal = modal;
-	}, {
-	    scope: $scope
-	});
-
-	//Cleanup the modal when we're done with it!
-	$scope.$on('$destroy', function() {
-	    $scope.searchModal.remove();
-	});
-
-
-	/*
-	*@TopController method
-	*@name search
-	*
-	*@description show the search modal
-	*/
-	$scope.search = function(){
-		$scope.searchModal.show();
-	}
-
-
-	/*
-	*@TopController method
-	*@name closeSearch
-	*
-	*@description close the search modal
-	*/
-	$scope.closeSearch = function(){
-		$scope.searchModal.hide();
-	}
-
-	// Get the app language value in the localStorage.
-	// If the value if undifined set the default value to tl( tagalog).
-	$scope.appLang = window.localStorage['appLang'];
-	if($scope.appLang == undefined){
-		// app language is undefined set the default value
-		localStorage['appLang'] = 'tl';
-		$scope.appLang = localStorage['appLang'];
-	}
-
-	// Store all the needed assets in the localStorage, indexDB or webSQL.
-	// Depending on how big the data is.
-	$scope.loadAssets();
-
-	// Extract the needed files 
-	var config = angular.fromJson(localStorage['config']); // application config file
-	var languages = angular.fromJson(localStorage['lang']); // application supported languages
-	
-	// Set the ion-side-menu rigth items
-	$rootScope.sideMenuRightHeader = config.sideMenuRightHeader; // side menu header
-	$rootScope.languages = languages; // side menu itmes
-
-}])
+  // Load all the needed files in the locaStorage
+  AssetsSvc.getLang();
+  AssetsSvc.getManifest(lang);
+})
 
 
 /*
-*@jwApp controller
-*@name HomeController
+*@name HomeCtrl
 *
-*@description contains the #/ (index) route behavior functions
+*@description app/home route controller
 */
-.controller('HomeController', ['$scope', '$rootScope', 'GetData',
-function($scope, $rootScope, GetData){
-	// Hide the book table of contents navigation
-	$rootScope.book = false;
+.controller('HomeCtrl', function($scope, $rootScope, DailyTextSvc) {
+    var appLang = localStorage['appLang'];
+    var manifest = angular.fromJson(localStorage['manifest']); // manifest
+    $rootScope.leftMenuNavs = manifest.leftNav; // left menu navs
 
-	// Extract the files from the localStorage
-	var appLang = localStorage['appLang']; // Application current language	
-	var config = angular.fromJson(localStorage['config']); // application config file
-	var booksList = angular.fromJson(localStorage['booksList']) // books list
-
-	// Set the main content of the view
-	$scope.books = booksList; // list of books
-	$scope.YearlyTxt = config.YearlyTxt; // Yearly text
-	$scope.arrowBox = config.arrowBox; // arrow box label
-
-	// Set the ion-side-menu left values
-	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
-	$rootScope.menus = config.menu;  // ion-side-menu left items
-
-}])
+    DailyTextSvc.getContent(appLang + '/dailytxt', appLang);
+})
 
 
 /*
-*@jwApp controller
-*@name LibraryController
+*@name LibCtrl
 *
-*@description contains the /library route functions
+*@description app/library route controller
 */
-.controller('LibraryController', ['$scope', '$rootScope', 'GetData',
-function($scope, $rootScope, GetData){
-	// Hide the book table of contents navigation
-	$rootScope.book = false;
-
-	// Extract the needed data from the localStorage
-	var appLang = localStorage['appLang']; // Application current language
-	var config = angular.fromJson(localStorage['config']); // configuration files
-	var booksList = angular.fromJson(localStorage['booksList']) // books list
-
-	// Set the page title
-	$scope.pageTitle = config.libraryPageTitle;
-
-	// Set the ion-side-menu left values
-	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
-	$rootScope.menus = config.menu;  // ion-side-menu left items
-
-	// Pass the variables into the view
-	$scope.books = booksList; // books list
-
-}])
+.controller('LibCtrl', function($scope){
+  
+})
 
 
 /*
-*@jwApp controller
-*@name BookController
+*@name BookCtrl
 *
-*@description contains the #/book/:book route behavior functions
+*@description app/book route controller
 */
-.controller('BookController', ['$scope', '$rootScope', '$stateParams', 'GetData', 'UtilityServices',
-function($scope, $rootScope, $stateParams, GetData, UtilityServices){
-	/*
-	*@BookController method
- 	*@name loadContent
-	*
-	*@description load the slected book contents in the iframe
-	*/
-	$rootScope.loadContent = function(path){
-		$scope.content = path;
-	}
-
-	// Show the book table of contents navigation
-	$rootScope.book = true;
-
-	// Extract the needed data from the localStorage
-	var appLang = localStorage['appLang']; // Application current language
-	var config = angular.fromJson(localStorage['config']); // configuration files
-	var booksList = angular.fromJson(localStorage['booksList']) // books list
-	
-	// Set the page title
-	$scope.pageTitle = $stateParams.title;
-
-
-
-	// Get the epub book toc.ncx and genereate needed content from it
-	GetData.getBookTocXML(appLang, $stateParams.book, function(data){
-		// convert the books toc.xml to json object for easy access
-		var bookNav = UtilityServices.bookNavToJson(data, '/data/' + appLang + '/' + $stateParams.book);
-		
-		$rootScope.sideMenuLeftHeader = config.library; // ion-side-menu-header
-		$rootScope.menus = bookNav; // ion-side-menu left items
-
-		// Set the default iframe src value
-		$scope.content = bookNav[0].path;
-		// Set the height of the iframe according to 
-		// the device screen height  for better dislplay.
-		$('iframe').height(screen.height);
-
-
-	});
-
-}])
+.controller('BookCtrl', function($scope, $stateParams){
+    
+})
 
 
 /*
-*@jwApp controller
-*@name NotesController
+*@name NotesCtrl
 *
-*@description contains the #/notes route behavior functions
+*@description app/notes route controller
 */
-.controller('NotesController', ['$scope', '$rootScope', '$stateParams', '$location', 'NotesCRUD',
-function($scope, $rootScope, $stateParams, $location, NotesCRUD){
-	$rootScope.book = false;
-	
-	// Extract the needed data from the localStorage
-	var appLang = localStorage['appLang']; // Application current language
-	var config = angular.fromJson(localStorage['config']); // configuration files
-	
-	// Set the page title
-	$scope.pageTitle = config.notesPageTitle;
-
-	// Set the ion-side-menu left values
-	$rootScope.sideMenuLeftHeader = config.JWAssistant;   // ion-side-menu left header
-	$rootScope.menus = config.menu;  // ion-side-menu left items
-
-	var notes = NotesCRUD.all(); // Get all the notes
-	if(notes){
-		$rootScope.notesList = notes;
-	}
-
-	
-	// Run only this function if the $stateParams is defined
-	if($stateParams.title != undefined){
-		var notesData = NotesCRUD.get($stateParams.title);
-		$scope.oldNotes = {};
-
-		if(notesData != false){
-			$scope.pageTitle = $stateParams.title;
-			$scope.oldNotes.title = notesData.title;
-			$scope.oldNotes.content = notesData.content;
-		}
-	}
+.controller('NotesCtrl', function($scope, $rootScope, $ionicModal, NotesCRUD){
+   // Get all the notes data
+   NotesCRUD.all(function(data){
+      $rootScope.noteslist = data;
+   });
 
 
-	/*
-	*@NotesController method
- 	*@name removeNotes
-	*
-	*@description remove the notes from the storage
-	*/
-	$scope.deleteNotes = function(title){
-		var remove = NotesCRUD.remove(title);
-		if(remove){
-			$location.path('/notes');
-		}else {
-			alert("Title is empty");
-		}
-	}
+  // Create the edit notes modal box
+  $ionicModal.fromTemplateUrl('edit-notes.html', function(modal){
+    $scope.editNotesModal = modal;
+  }, {
+    scope : $scope,
+    animation: 'slide-in-up',
+    focusFirstInput: true
+  });
 
 
-	/*
-	*@NotesController method
- 	*@name editNotes
-	*
-	*@description remove the notes from the storage
-	*/
-	$scope.editNotes = function(notes){
-		// Remove the stored notes first berfore storing a new one
-		// to avoid duplicated notes
-		var remove = NotesCRUD.remove(notes.title);
-		if(remove){
-			var save = NotesCRUD.save(notes);
-			if(save){
-				$location.path('/notes');
-			}else {
-				alert("Fields are required..");
-			}
-		}else {
-			alert("Fields are required..");
-		}
-	}
-	
-}]);
+  /*
+  *@name getNotes
+  *
+  *@description get the selected notes data
+  */
+  $scope.getNotes = function(id){
+    $rootScope.notesUpdate = {}; // holds the retrieve data
+    
+    // Get the data and fill the form with
+    // the retrieve data
+    NotesCRUD.get(id, function(data){
+      $rootScope.notesUpdate.title = data.title;
+      $rootScope.notesUpdate.content = data.content;
+      $rootScope.notesUpdate.id = data.id;
+      
+      // Show the edit notes modal
+      $scope.editNotesModal.show();
+    });
+  }
+
+
+  /*
+  *@name hideEditNotes
+  *
+  *@description hide the edit notes modal
+  */
+  $scope.hideEditNotes = function(){
+     $scope.editNotesModal.hide();
+  }
+
+
+  /*
+  *@name updateNotes
+  *
+  *@description update the selected notes
+  */
+  $scope.updateNotes = function(data){
+      // Update the data
+      NotesCRUD.update(data);
+
+      // Update the notes list
+      NotesCRUD.all(function(data){
+        $rootScope.noteslist = data;
+      });
+      // Hide the edit notes modal
+      $scope.editNotesModal.hide();
+  }
+
+
+  /*
+  *@name deleteNotes
+  *
+  *@description delete the selected notes
+  */
+  $scope.deleteNotes = function(id){
+      // Delete the data
+      NotesCRUD.delete(id);
+
+      // Update the notes list
+      NotesCRUD.all(function(data){
+        $rootScope.noteslist = data;
+      });
+      // Hide the edit notes modal
+      $scope.editNotesModal.hide();
+  }
+
+}); 
+
