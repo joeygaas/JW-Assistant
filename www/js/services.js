@@ -158,6 +158,24 @@ angular.module('JWApp.services', [])
 			}).error(function(error){
 				alert('Book toc.ncx file is missing');
 			});
+		},
+
+
+		/*
+		*@name get
+		*
+		*@param date {{ str }} date of the daily text
+		*@return object
+		*
+		*@description Get the selected data in the database
+		*/
+		get : function(date){
+			var query = 'SELECT localDate, content, verses FROM notes WHERE localDate=?';
+			db.transaction(function(tx){
+				tx.executeSql(query, [date]);
+			}, function(error){
+				alert(error.message);
+			});
 		}
 	};
 })
